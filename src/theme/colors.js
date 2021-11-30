@@ -1,6 +1,7 @@
 import tinycolor from 'tinycolor2'
 
-const defaultColors = {
+const MIN_DARKENING = 5
+const DEFAULT_COLORS = {
   primary: '#4d6e8e',
   secondary: '#69c1ab',
   error: '#fc666b',
@@ -9,15 +10,20 @@ const defaultColors = {
   neutral: '#F4F7F8'
 }
 
-const getDarkVariant = (color) => tinycolor(color).darken(10).toHexString()
+const getDarkVariant = (color) => {
+  const darknessLevel = -tinycolor(color).getLuminance() + 1
+  const darkeningFactor = MIN_DARKENING + MIN_DARKENING * 2 * darknessLevel
+
+  return tinycolor.mix(color, 'black', darkeningFactor).toHexString()
+}
 
 const generateColors = (
-  primary = defaultColors.primary,
-  secondary = defaultColors.secondary,
-  error = defaultColors.error,
-  warning = defaultColors.warning,
-  success = defaultColors.success,
-  neutral = defaultColors.neutral
+  primary = DEFAULT_COLORS.primary,
+  secondary = DEFAULT_COLORS.secondary,
+  error = DEFAULT_COLORS.error,
+  warning = DEFAULT_COLORS.warning,
+  success = DEFAULT_COLORS.success,
+  neutral = DEFAULT_COLORS.neutral
 ) => {
   return {
     primary,
@@ -25,12 +31,13 @@ const generateColors = (
     error,
     warning,
     success,
+    neutral,
     primaryDark: getDarkVariant(primary),
     secondaryDark: getDarkVariant(secondary),
     errorDark: getDarkVariant(error),
     warningDark: getDarkVariant(warning),
     successDark: getDarkVariant(success),
-    neutral
+    neutralDark: getDarkVariant(neutral)
   }
 }
 
