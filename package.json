@@ -53,6 +53,7 @@
     "dist"
   ],
   "dependencies": {
+    "styled-components": "^5.3.3",
     "tinycolor2": "^1.4.2"
   }
 }
