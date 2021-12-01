@@ -5,23 +5,17 @@ import generateTheme from '../../theme'
 import GlobalStyles from './GlobalStyles'
 
 const ThemeProvider = ({
-  primaryColor,
-  secondaryColor,
-  errorColor,
-  warningColor,
-  successColor,
-  neutralColor,
+  primaryColor: primary,
+  secondaryColor: secondary,
+  errorColor: error,
+  warningColor: warning,
+  successColor: success,
+  neutralColor: neutral,
   customTheme,
   children
 }) => {
-  const baseTheme = generateTheme(
-    primaryColor,
-    secondaryColor,
-    errorColor,
-    warningColor,
-    successColor,
-    neutralColor
-  )
+  const customColors = { primary, secondary, error, warning, success, neutral }
+  const baseTheme = generateTheme(customColors)
 
   const theme = { ...baseTheme, ...customTheme }
 
