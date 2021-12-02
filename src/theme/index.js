@@ -1,6 +1,7 @@
 import borderRadius from './borderRadius'
 import generateColors from './colors'
 import fontSize from './fontSize'
+import fontWeight from './fontWeight'
 import lineHeight from './lineHeight'
 import spacing from './spacing'
 
@@ -10,7 +11,8 @@ const generateTheme = ({
   error,
   warning,
   success,
-  neutral
+  neutral,
+  text
 } = {}) => {
   const colors = generateColors(
     primary,
@@ -18,12 +20,14 @@ const generateTheme = ({
     error,
     warning,
     success,
-    neutral
+    neutral,
+    text
   )
 
   return {
     colors,
     fontSize,
+    fontWeight,
     lineHeight,
     spacing,
     borderRadius

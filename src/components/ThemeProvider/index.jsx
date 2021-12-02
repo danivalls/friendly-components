@@ -11,11 +11,12 @@ const ThemeProvider = ({
   warningColor: warning,
   successColor: success,
   neutralColor: neutral,
+  textColor: text,
   customTheme,
   children
 }) => {
-  const customColors = { primary, secondary, error, warning, success, neutral }
-  const baseTheme = generateTheme(customColors)
+  const colors = { primary, secondary, error, warning, success, neutral, text }
+  const baseTheme = generateTheme(colors)
 
   const theme = { ...baseTheme, ...customTheme }
 
@@ -36,6 +37,7 @@ ThemeProvider.propTypes = {
   warningColor: PropTypes.string,
   successColor: PropTypes.string,
   neutralColor: PropTypes.string,
+  textColor: PropTypes.string,
   customTheme: PropTypes.shape({
     colors: PropTypes.object,
     fontSize: PropTypes.object,

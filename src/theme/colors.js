@@ -7,7 +7,8 @@ const DEFAULT_COLORS = {
   error: '#fc666b',
   warning: '#fce966',
   success: '#69c1ab',
-  neutral: '#F4F7F8'
+  neutral: '#F4F7F8',
+  text: '#202124'
 }
 
 const getDarkVariant = (color) => {
@@ -23,7 +24,8 @@ const generateColors = (
   error = DEFAULT_COLORS.error,
   warning = DEFAULT_COLORS.warning,
   success = DEFAULT_COLORS.success,
-  neutral = DEFAULT_COLORS.neutral
+  neutral = DEFAULT_COLORS.neutral,
+  text = DEFAULT_COLORS.text
 ) => {
   return {
     primary,
@@ -32,6 +34,7 @@ const generateColors = (
     warning,
     success,
     neutral,
+    text,
     primaryDark: getDarkVariant(primary),
     secondaryDark: getDarkVariant(secondary),
     errorDark: getDarkVariant(error),
