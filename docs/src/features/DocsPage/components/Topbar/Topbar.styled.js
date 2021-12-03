@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -14,9 +15,13 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.div`
+export const Title = styled(Link).attrs(() => ({
+  to: '/'
+}))`
   font-size: ${({ theme }) => theme.fontSize.large};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.text};
 
   @media (min-width: 900px) {
     font-size: ${({ theme }) => theme.fontSize.title3};

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const HomeLayout = styled.div`
@@ -57,58 +58,28 @@ export const ButtonsContainer = styled.div`
   }
 `
 
-export const BaseButton = styled.button`
+export const GetStartedButton = styled(Link).attrs(() => ({
+  to: '/docs'
+}))`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 0 ${({ theme }) => theme.spacing.base};
   height: ${({ theme }) => theme.spacing.large};
-  font-size: ${({ theme }) => theme.fontSize.title3};
+
+  font-size: ${({ theme }) => theme.fontSize.regular};
   color: ${({ theme }) => theme.colors.neutral};
+  text-decoration: none;
+
   outline: 0;
   border: 0;
   border-radius: ${({ theme }) => theme.borderRadius.base};
+
+  background-color: ${({ theme }) => theme.colors.secondary};
+
   cursor: pointer;
   transition: 0.3s;
-`
-
-export const GitHubButton = styled(BaseButton)`
-  position: relative;
-  width: ${({ theme }) => theme.spacing.large};
-  color: ${({ theme }) => theme.colors.text};
-  background: linear-gradient(
-    0deg,
-    ${({ theme }) => theme.colors.text} 49.9%,
-    #c9c9c9 50%
-  );
-  background-size: 100% 300%;
-  background-position: 0% 0%;
-  z-index: 0;
-
-  &:hover {
-    background-position: 0% 100%;
-  }
-
-  :after {
-    content: '';
-    position: absolute;
-    border-radius: 10px;
-    background-color: white;
-    top: 2px;
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
-    pointer-events: none;
-  }
-
-  & > * {
-    z-index: 1;
-  }
-`
-
-export const GetStartedButton = styled(BaseButton)`
-  font-size: ${({ theme }) => theme.fontSize.regular};
-  padding: ${({ theme }) => theme.spacing.base};
-  background-color: ${({ theme }) => theme.colors.secondary};
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondaryDark};
     transform: translateY(calc(-${({ theme }) => theme.spacing.tiny} / 2));
