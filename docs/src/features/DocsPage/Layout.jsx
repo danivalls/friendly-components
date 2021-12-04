@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useMinWidth } from '../../hooks/useMinWidth'
-import { Drawer, Topbar } from './components'
+import Drawer from './components/Drawer'
+import Topbar from './components/Topbar'
 import { Content, DocsLayout } from './Layout.styled'
 
 const Layout = () => {

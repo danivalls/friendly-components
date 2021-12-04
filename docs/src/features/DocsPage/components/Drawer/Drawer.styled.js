@@ -22,6 +22,13 @@ export const DrawerBody = styled.section`
   left: 0;
   bottom: 0;
 
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   background-color: white;
   box-shadow: ${({ locked, visible }) =>
     locked || !visible ? 'none' : '0px 0px 15px 0px rgba(0,0,0,0.5)'};

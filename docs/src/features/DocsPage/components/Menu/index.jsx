@@ -9,7 +9,10 @@ const Menu = ({ items }) => {
     if (mappedCategories[category]) {
       return {
         ...mappedCategories,
-        [category]: [...mappedCategories[category], { label, to }]
+        [category]: [
+          ...mappedCategories[category],
+          { label, to, active: Math.random() < 0.5 }
+        ]
       }
     }
 
@@ -21,8 +24,8 @@ const Menu = ({ items }) => {
       {Object.entries(itemsSortedByCategory).map(([category, items]) => (
         <React.Fragment key={category}>
           <CategoryHeader>{category}</CategoryHeader>
-          {items.map(({ to, label }) => (
-            <MenuItem key={to} label={label} to={to} />
+          {items.map(({ to, label, active }) => (
+            <MenuItem key={to} label={label} to={to} active={active} />
           ))}
         </React.Fragment>
       ))}
