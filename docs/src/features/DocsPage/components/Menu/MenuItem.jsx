@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Container, Indicator } from './MenuItem.styled'
+import { Indicator, Layout, StyledLink } from './MenuItem.styled'
 
 const MenuItem = ({ label, to, active }) => {
   return (
-    <Container to={to} active={active}>
-      <Indicator active={active} />
-      {label}
-    </Container>
+    <StyledLink to={to}>
+      <Layout activeItem={active}>
+        <Indicator activeItem={active} />
+        {label}
+      </Layout>
+    </StyledLink>
   )
 }
 

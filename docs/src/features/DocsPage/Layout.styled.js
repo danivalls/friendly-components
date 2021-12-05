@@ -16,7 +16,7 @@ export const DocsLayout = styled.div`
 export const Content = styled.main`
   grid-area: content;
   background-color: ${({ theme }) => theme.colors.neutral};
-  overflow: hidden;
+  overflow: auto;
 
   @media (min-width: 900px) {
     border-top-left-radius: ${({ theme }) => theme.borderRadius.large};
