@@ -5,10 +5,10 @@ import Home from '../features/HomePage'
 
 export const docsRoutes = [
   {
-    label: 'ExampleComponent',
+    label: 'Example Component',
     path: 'example-component',
     element: <ExampleComponentsDocs />,
-    category: 'CategoryExample'
+    category: 'Components'
   }
 ]
 
