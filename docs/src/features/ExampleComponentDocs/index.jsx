@@ -13,9 +13,7 @@ const ExampleComponentsDocs = () => {
       description='This is an example of a component description'
     >
       <DocSectionTitle>Installation</DocSectionTitle>
-      <JSXCode>
-        {"import { ExampleComponent } from 'friendly-components'"}
-      </JSXCode>
+      <JSXCode code="import { ExampleComponent } from 'friendly-components'" />
 
       <DocSectionTitle>How to use</DocSectionTitle>
       <DocSectionSubtitle>Basic usage</DocSectionSubtitle>

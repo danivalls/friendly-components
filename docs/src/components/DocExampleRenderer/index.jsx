@@ -7,7 +7,7 @@ const DocExampleRenderer = ({ code, children }) => {
   return (
     <Container>
       <ComponentFrame>{children}</ComponentFrame>
-      <JSXCode>{code}</JSXCode>
+      <JSXCode code={code} />
     </Container>
   )
 }
