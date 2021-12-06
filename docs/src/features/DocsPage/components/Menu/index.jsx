@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import { docsRoutes } from '../../../../routes/public'
+import { docsRoutes } from 'routes/public'
 import { CategoryHeader, MenuItemsList } from './Menu.styled'
 import MenuItem from './MenuItem'
 

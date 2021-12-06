@@ -1,7 +1,7 @@
+import Docs from 'features/DocsPage'
+import ExampleComponentsDocs from 'features/ExampleComponentDocs'
+import Home from 'features/HomePage'
 import React from 'react'
-import Docs from '../features/DocsPage'
-import ExampleComponentsDocs from '../features/ExampleComponentDocs'
-import Home from '../features/HomePage'
 
 export const docsRoutes = [
   {

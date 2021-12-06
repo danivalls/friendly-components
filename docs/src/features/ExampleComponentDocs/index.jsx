@@ -1,9 +1,9 @@
+import DocExampleRenderer from 'components/DocExampleRenderer'
+import DocSectionSubtitle from 'components/DocSectionSubtitle'
+import DocSectionTitle from 'components/DocSectionTitle'
+import DocTemplate from 'components/DocTemplate'
+import JSXCode from 'components/JSXCode'
 import React from 'react'
-import DocExampleRenderer from '../../components/DocExampleRenderer'
-import DocSectionSubtitle from '../../components/DocSectionSubtitle'
-import DocSectionTitle from '../../components/DocSectionTitle'
-import DocTemplate from '../../components/DocTemplate'
-import JSXCode from '../../components/JSXCode'
 import Example, { exampleCode } from './components/usage'
 
 const ExampleComponentsDocs = () => {
