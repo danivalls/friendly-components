@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { ThemeProvider as SCProvider } from 'styled-components'
 import generateTheme from '../../theme'
 import GlobalStyles from './GlobalStyles'
@@ -22,6 +23,14 @@ const ThemeProvider = ({
 
   return (
     <SCProvider theme={theme}>
+      <Helmet>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap'
+          rel='stylesheet'
+        />
+      </Helmet>
       <GlobalStyles />
       {children}
     </SCProvider>

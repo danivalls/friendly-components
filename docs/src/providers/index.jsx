@@ -7,11 +7,11 @@ const theme = generateTheme()
 
 const AppProvider = ({ children }) => {
   return (
-    <FCProvider>
-      <ThemeProvider theme={theme}>
-        <Router>{children}</Router>
-      </ThemeProvider>
-    </FCProvider>
+    <ThemeProvider theme={theme}>
+      <FCProvider>
+        <Router basename={process.env.PUBLIC_URL}>{children}</Router>
+      </FCProvider>
+    </ThemeProvider>
   )
 }
 
