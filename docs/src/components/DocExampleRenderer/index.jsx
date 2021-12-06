@@ -16,5 +16,5 @@ export default DocExampleRenderer
 
 DocExampleRenderer.propTypes = {
   code: PropTypes.string.isRequired,
-  children: PropTypes.arrayOf(PropTypes.node).isRequired
+  children: PropTypes.node.isRequired
 }
