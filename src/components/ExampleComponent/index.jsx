@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  ColorCard,
-  ColorPalette,
-  Container,
-  Title
-} from './ExampleComponent.styled'
+import { ColorCard, ColorPalette, Container } from './ExampleComponent.styled'
 
 const ExampleComponent = () => {
   const colors = [
@@ -18,7 +13,6 @@ const ExampleComponent = () => {
 
   return (
     <Container>
-      <Title>Colors</Title>
       <ColorPalette>
         {colors.map((color) => (
           <ColorCard color={color} key={color} />

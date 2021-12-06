@@ -9,14 +9,8 @@ const generateGradient = ({ theme, color }) => {
 
 export const Container = styled.div`
   display: flex;
-  padding: ${({ theme }) => theme.spacing.base};
   gap: ${({ theme }) => theme.spacing.small};
   align-items: center;
-`
-
-export const Title = styled.div`
-  font-weight: 700;
-  font-size: ${({ theme }) => theme.fontSize.title2};
 `
 
 export const ColorPalette = styled.div`
