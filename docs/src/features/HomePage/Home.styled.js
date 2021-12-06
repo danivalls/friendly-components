@@ -76,12 +76,12 @@ export const GetStartedButton = styled(Link).attrs(() => ({
   border: 0;
   border-radius: ${({ theme }) => theme.borderRadius.base};
 
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.primary};
 
   cursor: pointer;
   transition: 0.3s;
   &:hover {
-    background-color: ${({ theme }) => theme.colors.secondaryDark};
+    background-color: ${({ theme }) => theme.colors.primaryDark};
     transform: translateY(calc(-${({ theme }) => theme.spacing.tiny} / 2));
   }
 `

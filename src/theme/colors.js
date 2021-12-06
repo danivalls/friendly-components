@@ -1,11 +1,21 @@
 import tinycolor from 'tinycolor2'
 
-const DEFAULT_COLORS = {
-  primary: '#4d6e8e',
+/* const DEFAULT_COLORS = {
+  primary: '#3DB2FF',
   secondary: '#69c1ab',
   error: '#fc666b',
   warning: '#fce966',
   success: '#69c1ab',
+  neutral: '#F4F7F8',
+  text: '#202124'
+} */
+
+const DEFAULT_COLORS = {
+  primary: '#3DB2FF',
+  secondary: '#345995',
+  error: '#FF2442',
+  warning: '#FFB830',
+  success: '#CADE71',
   neutral: '#F4F7F8',
   text: '#202124'
 }
