@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { ColorCard, ColorPalette, Container } from './ExampleComponent.styled'
 
-const ExampleComponent = () => {
+const ExampleComponent = ({ className }) => {
   const colors = [
     'primary',
     'secondary',
@@ -23,3 +24,7 @@ const ExampleComponent = () => {
 }
 
 export default ExampleComponent
+
+ExampleComponent.propTypes = {
+  className: PropTypes.string
+}

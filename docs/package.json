@@ -1,6 +1,6 @@
 {
-  "name": "friendly-components-example",
-  "homepage": ".",
+  "name": "friendly-components-docs",
+  "homepage": "https://danivalls.github.io/friendly-components/",
   "version": "0.0.0",
   "private": true,
   "scripts": {
