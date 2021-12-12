@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.neutralDark}30;
+  background-color: ${({ theme }) => theme.colors.neutralDark}50;
   padding: ${({ theme }) => theme.spacing.large};
 `
 

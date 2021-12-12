@@ -9,7 +9,9 @@ const Menu = () => {
 
   const itemsSortedByCategory = docsRoutes.reduce((mappedCategories, item) => {
     const { category, label, path } = item
-    const active = location.pathname.split('/').at(-1) === path
+    const active = path
+      ? location.pathname.split('/').at(-1) === path
+      : location.pathname === '/docs'
     const menuItem = { label, path, active }
 
     if (mappedCategories[category]) {

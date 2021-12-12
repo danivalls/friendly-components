@@ -1,9 +1,16 @@
 import Docs from 'features/DocsPage'
 import ExampleComponentsDocs from 'features/ExampleComponentDocs'
+import GettingStarted from 'features/GettingStarted'
 import Home from 'features/HomePage'
 import React from 'react'
 
 export const docsRoutes = [
+  {
+    label: 'Installation',
+    path: '',
+    element: <GettingStarted />,
+    category: 'Getting Started'
+  },
   {
     label: 'Example Component',
     path: 'example-component',
