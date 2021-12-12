@@ -9,7 +9,7 @@ import {
 } from './codeExamples'
 import { Paragraph } from './Installation.styled'
 
-const GettingStarted = () => {
+const Installation = () => {
   return (
     <DocTemplate title='Installation'>
       <DocSectionTitle>Add it to your project</DocSectionTitle>
@@ -47,4 +47,4 @@ const GettingStarted = () => {
   )
 }
 
-export default GettingStarted
+export default Installation

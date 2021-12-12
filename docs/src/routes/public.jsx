@@ -1,7 +1,7 @@
 import Docs from 'features/DocsPage'
 import ExampleComponentsDocs from 'features/ExampleComponentDocs'
-import GettingStarted from 'features/GettingStarted'
 import Home from 'features/HomePage'
+import GettingStarted from 'features/Installation'
 import React from 'react'
 
 export const docsRoutes = [
