@@ -1,5 +1,5 @@
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import styled from 'styled-components'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import styled from 'styled-components';
 
 export const Highlighter = styled(SyntaxHighlighter).attrs(() => ({
   language: 'javascript'
@@ -13,4 +13,4 @@ export const Highlighter = styled(SyntaxHighlighter).attrs(() => ({
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace !important;
   }
-`
+`;

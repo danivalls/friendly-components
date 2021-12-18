@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import { Container, Line } from './MenuBurger.styled'
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Container, Line } from './MenuBurger.styled';
 
 const MenuBurger = ({ onClick, active, className }) => {
   return (
@@ -9,17 +9,17 @@ const MenuBurger = ({ onClick, active, className }) => {
       <Line />
       <Line />
     </Container>
-  )
-}
+  );
+};
 
-export default MenuBurger
+export default MenuBurger;
 
 MenuBurger.propTypes = {
   onClick: PropTypes.func.isRequired,
   active: PropTypes.bool.isRequired,
   className: PropTypes.string
-}
+};
 
 MenuBurger.defaultProps = {
   className: ''
-}
+};

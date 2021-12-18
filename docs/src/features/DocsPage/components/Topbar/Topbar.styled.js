@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
@@ -13,7 +13,7 @@ export const Container = styled.div`
   @media (min-width: 900px) {
     justify-content: space-between;
   }
-`
+`;
 
 export const Title = styled(Link).attrs(() => ({
   to: '/'
@@ -26,7 +26,7 @@ export const Title = styled(Link).attrs(() => ({
   @media (min-width: 900px) {
     font-size: ${({ theme }) => theme.fontSize.title3};
   }
-`
+`;
 
 export const Extras = styled.div`
   display: none;
@@ -34,4 +34,4 @@ export const Extras = styled.div`
     display: grid;
     grid-gap: ${({ theme }) => theme.spacing.base};
   }
-`
+`;

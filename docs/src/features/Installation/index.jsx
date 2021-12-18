@@ -1,32 +1,17 @@
-import DocSectionTitle from 'components/DocSectionTitle'
-import DocTemplate from 'components/DocTemplate'
-import JSXCode from 'components/JSXCode'
-import React from 'react'
-import {
-  addingThemeProvider,
-  fullInstallationCommand,
-  installationCommand
-} from './codeExamples'
-import { Paragraph } from './Installation.styled'
+import DocSectionTitle from 'components/DocSectionTitle';
+import DocTemplate from 'components/DocTemplate';
+import JSXCode from 'components/JSXCode';
+import React from 'react';
+import { addingThemeProvider, installationCommand } from './codeExamples';
+import { Paragraph } from './Installation.styled';
 
 const Installation = () => {
   return (
-    <DocTemplate title='Installation'>
+    <DocTemplate title="Installation">
       <DocSectionTitle>Add it to your project</DocSectionTitle>
       <Paragraph>
-        FriendlyComponents has <code>styled-components</code> as peer
-        dependency, which means you'll need to install it into your project if
-        you haven't already.
-      </Paragraph>
-      <Paragraph>
-        If you don't have <code>styled-components</code> installed in your
-        project, you'll need to run the following command to install both
-        <code>styled-components</code> and <code>friendly-components</code>:
-      </Paragraph>
-      <JSXCode code={fullInstallationCommand} />
-      <Paragraph>
-        Or, if you already have <code>styled-components</code> installed in your
-        project, simply run:
+        To start using FriendlyComponents in your React project, just install it
+        as dependency using the following command:
       </Paragraph>
       <JSXCode code={installationCommand} />
 
@@ -44,7 +29,7 @@ const Installation = () => {
       </Paragraph>
       <JSXCode code={addingThemeProvider} />
     </DocTemplate>
-  )
-}
+  );
+};
 
-export default Installation
+export default Installation;

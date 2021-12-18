@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import { Title } from './DocSectionTitle.styled'
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Title } from './DocSectionTitle.styled';
 
 const DocSectionTitle = ({ children }) => {
-  return <Title>{children}</Title>
-}
+  return <Title>{children}</Title>;
+};
 
-export default DocSectionTitle
+export default DocSectionTitle;
 
 DocSectionTitle.propTypes = {
   children: PropTypes.node
-}
+};

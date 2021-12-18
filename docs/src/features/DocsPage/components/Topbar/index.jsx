@@ -1,6 +1,6 @@
-import GitHubButton from 'components/GitHubButton'
-import React from 'react'
-import { Container, Extras, Title } from './Topbar.styled'
+import GitHubButton from 'components/GitHubButton';
+import React from 'react';
+import { Container, Extras, Title } from './Topbar.styled';
 
 const Topbar = () => {
   return (
@@ -10,7 +10,7 @@ const Topbar = () => {
         <GitHubButton />
       </Extras>
     </Container>
-  )
-}
+  );
+};
 
-export default Topbar
+export default Topbar;

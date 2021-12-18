@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const GHLink = styled.a`
   position: relative;
@@ -50,4 +50,4 @@ export const GHLink = styled.a`
     z-index: 1;
     transition: 0.2s ease-out;
   }
-`
+`;

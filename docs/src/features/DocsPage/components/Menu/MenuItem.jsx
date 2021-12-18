@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import { Indicator, Layout, StyledLink } from './MenuItem.styled'
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Indicator, Layout, StyledLink } from './MenuItem.styled';
 
 const MenuItem = ({ label, to, active }) => {
   return (
@@ -10,13 +10,13 @@ const MenuItem = ({ label, to, active }) => {
         {label}
       </Layout>
     </StyledLink>
-  )
-}
+  );
+};
 
-export default MenuItem
+export default MenuItem;
 
 MenuItem.propTypes = {
   label: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired
-}
+};

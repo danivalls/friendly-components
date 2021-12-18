@@ -1,8 +1,8 @@
-import Docs from 'features/DocsPage'
-import ExampleComponentsDocs from 'features/ExampleComponentDocs'
-import Home from 'features/HomePage'
-import GettingStarted from 'features/Installation'
-import React from 'react'
+import Docs from 'features/DocsPage';
+import ExampleComponentsDocs from 'features/ExampleComponentDocs';
+import Home from 'features/HomePage';
+import GettingStarted from 'features/Installation';
+import React from 'react';
 
 export const docsRoutes = [
   {
@@ -17,9 +17,9 @@ export const docsRoutes = [
     element: <ExampleComponentsDocs />,
     category: 'Components'
   }
-]
+];
 
 export const publicRoutes = [
   { path: '/docs/*', element: <Docs />, children: docsRoutes },
   { path: '/', element: <Home /> }
-]
+];
