@@ -1,11 +1,11 @@
-import { ExampleComponent } from 'friendly-components'
-import React from 'react'
+import { ExampleComponent } from 'friendly-components';
+import React from 'react';
 
 const Example = () => {
-  return <ExampleComponent />
-}
+  return <ExampleComponent />;
+};
 
-export default Example
+export default Example;
 
 export const exampleCode = `
 import { ExampleComponent } from 'friendly-components'
@@ -16,4 +16,4 @@ const Example = () => {
 }
 
 export default Example
-`
+`;

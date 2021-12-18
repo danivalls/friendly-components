@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const DocsLayout = styled.div`
   display: grid;
@@ -11,7 +11,7 @@ export const DocsLayout = styled.div`
     grid-template-areas: 'topbar topbar' 'menu content';
     grid-template-columns: min-content auto;
   }
-`
+`;
 
 export const Content = styled.main`
   grid-area: content;
@@ -22,4 +22,4 @@ export const Content = styled.main`
     border-top-left-radius: ${({ theme }) => theme.borderRadius.large};
     border-bottom-left-radius: ${({ theme }) => theme.borderRadius.large};
   }
-`
+`;

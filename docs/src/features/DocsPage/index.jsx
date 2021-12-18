@@ -1,18 +1,24 @@
-import { useMinWidth } from 'hooks/useMinWidth'
-import React, { useState } from 'react'
-import { useRoutes } from 'react-router-dom'
-import { docsRoutes } from 'routes/public'
-import Drawer from './components/Drawer'
-import Topbar from './components/Topbar'
-import { Content, DocsLayout } from './Layout.styled'
+import { useMinWidth } from 'hooks/useMinWidth';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useRoutes } from 'react-router-dom';
+import { docsRoutes } from 'routes/public';
+import Drawer from './components/Drawer';
+import Topbar from './components/Topbar';
+import { Content, DocsLayout } from './Layout.styled';
 
 const Layout = () => {
-  const [menuVisible, setMenuVisible] = useState(false)
-  const triggerResponsive = useMinWidth(900)
+  const [menuVisible, setMenuVisible] = useState(false);
+  const triggerResponsive = useMinWidth(900);
+  const location = useLocation();
 
-  const toggleMenuVisibility = () => setMenuVisible((visibility) => !visibility)
+  useEffect(() => {
+    setMenuVisible(false);
+  }, [location]);
 
-  const routing = useRoutes(docsRoutes)
+  const toggleMenuVisibility = () =>
+    setMenuVisible((visibility) => !visibility);
+
+  const routing = useRoutes(docsRoutes);
 
   return (
     <DocsLayout>
@@ -26,7 +32,7 @@ const Layout = () => {
         locked={!triggerResponsive}
       />
     </DocsLayout>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

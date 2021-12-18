@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-`
+`;
 
 export const Layout = styled.div`
   position: relative;
@@ -25,7 +25,7 @@ export const Layout = styled.div`
       left: -5px;
     }
   }
-`
+`;
 
 export const Indicator = styled.span`
   position: absolute;
@@ -41,4 +41,4 @@ export const Indicator = styled.span`
     ${({ theme }) => theme.colors.primary};
 
   transition: 0.3s ease-out;
-`
+`;

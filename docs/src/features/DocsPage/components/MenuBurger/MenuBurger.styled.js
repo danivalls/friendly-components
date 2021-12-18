@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.button`
   background-color: transparent;
@@ -32,8 +32,8 @@ export const Container = styled.button`
         translate(${({ active }) => (active ? '-8px, -4px' : 0)});
     }
   }
-`
+`;
 export const Line = styled.span`
   height: 3px;
   border-radius: ${({ theme }) => theme.spacing.tiny};
-`
+`;

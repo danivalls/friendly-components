@@ -25,11 +25,13 @@ const generateColors = (baseColors: BaseColors = {}): ColorsType => {
   const generatedColors = Object.entries(initialColors).reduce(
     (colors, [colorName, colorCode]) => {
       const colorWithVariants = {
-        [`${colorName}Lighter`]: whitenColor(colorCode, 90),
-        [`${colorName}Light`]: whitenColor(colorCode, 50),
+        [`${colorName}Lightest`]: whitenColor(colorCode, 90),
+        [`${colorName}Lighter`]: whitenColor(colorCode, 50),
+        [`${colorName}Light`]: whitenColor(colorCode, 30),
         [colorName]: colorCode,
-        [`${colorName}Dark`]: blackenColor(colorCode, 20),
-        [`${colorName}Darker`]: blackenColor(colorCode, 50)
+        [`${colorName}Dark`]: blackenColor(colorCode, 10),
+        [`${colorName}Darker`]: blackenColor(colorCode, 30),
+        [`${colorName}Darkest`]: blackenColor(colorCode, 50)
       };
 
       return { ...colors, ...colorWithVariants };
@@ -43,41 +45,55 @@ const generateColors = (baseColors: BaseColors = {}): ColorsType => {
 export default generateColors;
 
 export type ColorsType = {
-  primary: string;
-  primaryDarker: string;
-  primaryDark: string;
-  primaryLighter: string;
-  primaryLight: string;
-  secondary: string;
-  secondaryDarker: string;
-  secondaryDark: string;
-  secondaryLighter: string;
-  secondaryLight: string;
   error: string;
-  errorDarker: string;
   errorDark: string;
-  errorLighter: string;
+  errorDarker: string;
+  errorDarkest: string;
   errorLight: string;
-  warning: string;
-  warningDarker: string;
-  warningDark: string;
-  warningLighter: string;
-  warningLight: string;
-  success: string;
-  successDarker: string;
-  successDark: string;
-  successLighter: string;
-  successLight: string;
+  errorLighter: string;
+  errorLightest: string;
   neutral: string;
-  neutralDarker: string;
   neutralDark: string;
-  neutralLighter: string;
+  neutralDarker: string;
+  neutralDarkest: string;
   neutralLight: string;
+  neutralLighter: string;
+  neutralLightest: string;
+  primary: string;
+  primaryDark: string;
+  primaryDarker: string;
+  primaryDarkest: string;
+  primaryLight: string;
+  primaryLighter: string;
+  primaryLightest: string;
+  secondary: string;
+  secondaryDark: string;
+  secondaryDarker: string;
+  secondaryDarkest: string;
+  secondaryLight: string;
+  secondaryLighter: string;
+  secondaryLightest: string;
+  success: string;
+  successDark: string;
+  successDarker: string;
+  successDarkest: string;
+  successLight: string;
+  successLighter: string;
+  successLightest: string;
   text: string;
-  textDarker: string;
   textDark: string;
-  textLighter: string;
+  textDarker: string;
+  textDarkest: string;
   textLight: string;
+  textLighter: string;
+  textLightest: string;
+  warning: string;
+  warningDark: string;
+  warningDarker: string;
+  warningDarkest: string;
+  warningLight: string;
+  warningLighter: string;
+  warningLightest: string;
 };
 
 export type BaseColors = {

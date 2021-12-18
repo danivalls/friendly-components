@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const DRAWER_WIDTH = '300px'
+const DRAWER_WIDTH = '300px';
 
 export const Container = styled.div`
   position: ${({ locked }) => (locked ? 'relative' : 'fixed')};
@@ -14,7 +14,7 @@ export const Container = styled.div`
   pointer-events: none;
 
   z-index: 1000;
-`
+`;
 
 export const DrawerBody = styled.section`
   position: ${({ locked }) => (locked ? 'unset' : 'fixed')};
@@ -43,7 +43,7 @@ export const DrawerBody = styled.section`
 
   pointer-events: all;
   transition: all 0.2s ease-out;
-`
+`;
 
 export const BurgerContainer = styled.div`
   position: fixed;
@@ -62,7 +62,7 @@ export const BurgerContainer = styled.div`
 
   pointer-events: all;
   transition: all 0.2s ease-out;
-`
+`;
 
 export const Mask = styled.div`
   position: fixed;
@@ -75,4 +75,4 @@ export const Mask = styled.div`
   pointer-events: ${({ visible }) => (visible ? 'all' : 'none')};
 
   transition: all 0.2s;
-`
+`;

@@ -1,26 +1,28 @@
-import React from 'react'
-import { useLocation } from 'react-router'
-import { docsRoutes } from 'routes/public'
-import { CategoryHeader, MenuItemsList } from './Menu.styled'
-import MenuItem from './MenuItem'
+import React from 'react';
+import { useLocation } from 'react-router';
+import { docsRoutes } from 'routes/public';
+import { CategoryHeader, MenuItemsList } from './Menu.styled';
+import MenuItem from './MenuItem';
 
 const Menu = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   const itemsSortedByCategory = docsRoutes.reduce((mappedCategories, item) => {
-    const { category, label, path } = item
-    const active = location.pathname.split('/').at(-1) === path
-    const menuItem = { label, path, active }
+    const { category, label, path } = item;
+    const active = path
+      ? location.pathname.split('/').at(-1) === path
+      : location.pathname === '/docs';
+    const menuItem = { label, path, active };
 
     if (mappedCategories[category]) {
       return {
         ...mappedCategories,
         [category]: [...mappedCategories[category], menuItem]
-      }
+      };
     }
 
-    return { ...mappedCategories, [category]: [menuItem] }
-  }, {})
+    return { ...mappedCategories, [category]: [menuItem] };
+  }, {});
 
   return (
     <MenuItemsList>
@@ -33,7 +35,7 @@ const Menu = () => {
         </React.Fragment>
       ))}
     </MenuItemsList>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

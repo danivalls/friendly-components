@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Title = styled.h2`
   margin-top: 0;
@@ -10,4 +10,4 @@ export const Title = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.title3};
   line-height: ${({ theme }) => theme.lineHeight.title3};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-`
+`;

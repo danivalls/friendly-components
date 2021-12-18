@@ -1,5 +1,5 @@
-import GitHubButton from 'components/GitHubButton'
-import React from 'react'
+import GitHubButton from 'components/GitHubButton';
+import React from 'react';
 import {
   ButtonsContainer,
   GetStartedButton,
@@ -7,12 +7,12 @@ import {
   MainContent,
   Subtitle,
   Title
-} from './Home.styled'
+} from './Home.styled';
 
 const Home = () => {
   return (
     <HomeLayout>
-      <MainContent className='main-content'>
+      <MainContent className="main-content">
         <Title>FriendlyComponents</Title>
         <Subtitle>A components library for React</Subtitle>
         <ButtonsContainer>
@@ -21,7 +21,7 @@ const Home = () => {
         </ButtonsContainer>
       </MainContent>
     </HomeLayout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const HomeLayout = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ export const HomeLayout = styled.div`
     white 60%,
     rgba(0, 0, 0, 0.25) 100%
   );
-`
+`;
 
 export const MainContent = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ export const MainContent = styled.div`
   padding: ${({ theme }) => theme.spacing.large};
   transform: scale(1);
   transition: 0.3s cubic-bezier(0.23, 1.05, 0.65, 1.44);
-`
+`;
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.title3};
@@ -35,7 +35,7 @@ export const Title = styled.h1`
     font-size: ${({ theme }) => theme.fontSize.title1};
     line-height: ${({ theme }) => theme.lineHeight.title1};
   }
-`
+`;
 
 export const Subtitle = styled.h2`
   margin: 0;
@@ -47,7 +47,7 @@ export const Subtitle = styled.h2`
     font-size: ${({ theme }) => theme.fontSize.title2};
     line-height: ${({ theme }) => theme.lineHeight.title2};
   }
-`
+`;
 
 export const ButtonsContainer = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ export const ButtonsContainer = styled.div`
   & > * {
     margin-right: ${({ theme }) => theme.spacing.small};
   }
-`
+`;
 
 export const GetStartedButton = styled(Link).attrs(() => ({
   to: '/docs'
@@ -84,4 +84,4 @@ export const GetStartedButton = styled(Link).attrs(() => ({
     background-color: ${({ theme }) => theme.colors.primaryDark};
     transform: translateY(calc(-${({ theme }) => theme.spacing.tiny} / 2));
   }
-`
+`;
