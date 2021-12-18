@@ -7,7 +7,7 @@
   "repository": "danivalls/friendly-components",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "homepage": "https://danivalls.github.io/friendly-components/",
   "engines": {
     "node": ">=10"
@@ -29,6 +29,12 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/node": "^17.0.0",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-helmet": "^6.1.4",
+    "@types/jest": "^27.0.3",
+    "@types/tinycolor2": "^1.4.3",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -39,7 +45,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^2.2.0",
     "microbundle-crl": "^0.13.10",
@@ -50,12 +56,13 @@
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "styled-components": "^5.3.3",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.4"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
+    "@types/styled-components": "^5.1.18",
     "react-helmet": "^6.1.0",
     "tinycolor2": "^1.4.2"
   }

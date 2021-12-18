@@ -6,6 +6,6 @@ const fontSize = {
   title3: '24px',
   title2: '32px',
   title1: '44px'
-}
+};
 
-export default fontSize
+export default fontSize;
