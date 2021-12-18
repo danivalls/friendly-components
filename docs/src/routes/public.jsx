@@ -1,3 +1,4 @@
+import ButtonDocs from 'features/ButtonDocs';
 import Docs from 'features/DocsPage';
 import ExampleComponentsDocs from 'features/ExampleComponentDocs';
 import Home from 'features/HomePage';
@@ -15,6 +16,12 @@ export const docsRoutes = [
     label: 'Example Component',
     path: 'example-component',
     element: <ExampleComponentsDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Button',
+    path: 'button',
+    element: <ButtonDocs />,
     category: 'Components'
   }
 ];
