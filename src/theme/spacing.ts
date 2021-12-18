@@ -4,6 +4,6 @@ const spacing = {
   base: '24px',
   small: '16px',
   tiny: '8px'
-}
+};
 
-export default spacing
+export default spacing;
