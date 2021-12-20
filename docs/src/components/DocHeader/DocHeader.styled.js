@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.neutralDark}50;
   padding: ${({ theme }) => theme.spacing.large};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.neutralDark};
 `;
 
 export const Title = styled.h1`

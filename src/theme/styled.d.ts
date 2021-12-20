@@ -1,10 +1,10 @@
 import 'styled-components';
 import borderRadius from './borderRadius';
-import { ColorsType } from './colors';
 import fontSize from './fontSize';
 import fontWeight from './fontWeight';
 import lineHeight from './lineHeight';
 import spacing from './spacing';
+import { ColorsType } from './types';
 
 declare module 'styled-components' {
   export interface DefaultTheme {

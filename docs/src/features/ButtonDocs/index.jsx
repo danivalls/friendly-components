@@ -1,18 +1,23 @@
-import DocSectionTitle from 'components/DocSectionTitle'
-import DocTemplate from 'components/DocTemplate'
-import JSXCode from 'components/JSXCode'
-import React from 'react'
-import { importCode } from './codeExamples'
-import BasicUsage from './components/BasicUsage'
+import DocExampleRenderer from 'components/DocExampleRenderer';
+import DocSectionTitle from 'components/DocSectionTitle';
+import DocTemplate from 'components/DocTemplate';
+import React from 'react';
+import BasicUsage from './components/BasicUsage';
+import Outlined from './components/Outlined';
 
 const ButtonDocs = () => {
   return (
-    <DocTemplate title='Button'>
+    <DocTemplate title="Button">
       <DocSectionTitle>Usage</DocSectionTitle>
-      <BasicUsage />
-      <JSXCode code={importCode} />
-    </DocTemplate>
-  )
-}
+      <DocExampleRenderer title="Basic" code={BasicUsage.code}>
+        <BasicUsage />
+      </DocExampleRenderer>
 
-export default ButtonDocs
+      <DocExampleRenderer title="Outlined" code={Outlined.code}>
+        <Outlined />
+      </DocExampleRenderer>
+    </DocTemplate>
+  );
+};
+
+export default ButtonDocs;

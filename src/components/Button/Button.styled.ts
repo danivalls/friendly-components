@@ -1,4 +1,5 @@
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, keyframes } from 'styled-components';
+import { BaseButtonProps, RippleProps } from './types';
 
 const generatePadding = ({ theme }: { theme: DefaultTheme }): string => {
   const { small, tiny } = theme.spacing;
@@ -12,7 +13,7 @@ const getColorFromTheme = (props: {
 }): string => {
   const { theme, colorType } = props;
 
-  if (theme.colors[colorType]) return theme.colors[colorType];
+  if (colorType && theme.colors[colorType]) return theme.colors[colorType];
 
   return colorType;
 };
@@ -20,40 +21,71 @@ const getColorFromTheme = (props: {
 const generateBackgroundColor = (props: {
   theme: DefaultTheme;
   colorType: string;
-  outlined: boolean;
+  styleType: string;
 }): string => {
-  if (props.outlined) return 'transparent';
+  if (props.styleType === 'outlined') return 'transparent';
   return getColorFromTheme(props);
 };
 
 const generateTextColor = (props: {
   theme: DefaultTheme;
   colorType: string;
-  outlined: boolean;
+  styleType: string;
 }): string => {
-  if (props.outlined) return getColorFromTheme(props);
+  if (props.styleType === 'outlined') return getColorFromTheme(props);
 
   return 'white';
 };
 
-const generateShadow = (props: {
+const generateOutlineShadow = (props: {
   theme: DefaultTheme;
   colorType: string;
-  outlined: boolean;
+  styleType: string;
 }): string => {
-  if (props.outlined)
+  if (props.styleType === 'outlined')
     return `inset 0px 0px 0px 2px ${getColorFromTheme(props)};`;
 
   return 'none';
 };
 
-export const BaseButton = styled.button`
+export const BaseButton = styled.button<BaseButtonProps>`
   border: none;
+  position: relative;
+  overflow: hidden;
   outline: none;
   padding: ${generatePadding};
   border-radius: ${({ theme }): string => theme.borderRadius.base};
   cursor: pointer;
   background-color: ${generateBackgroundColor};
   color: ${generateTextColor};
-  box-shadow: ${generateShadow};
+  box-shadow: ${generateOutlineShadow};
+`;
+
+const rippleAnimation = keyframes`
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(10);
+  }
+`;
+
+export const Ripple = styled.div.attrs(() => ({
+  'aria-label': 'ripple'
+}))<RippleProps>`
+  position: absolute;
+  top: ${({ y }): number => y}px;
+  left: ${({ x }): number => x}px;
+  background-color: ${({ theme, colored, colorType }): string =>
+    colored ? getColorFromTheme({ theme, colorType }) : 'white'};
+  border-radius: 100%;
+  pointer-events: none;
+  aspect-ratio: 1 / 1;
+  width: 10px;
+  animation: ${rippleAnimation};
+  animation-duration: ${({ duration }): number => duration}ms;
+  animation-fill-mode: forwards;
 `;
