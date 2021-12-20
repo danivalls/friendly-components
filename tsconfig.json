@@ -15,7 +15,13 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "docs"]

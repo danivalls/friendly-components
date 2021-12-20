@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Title } from './DocSectionSubtitle.styled';
 
-const DocSectionSubtitle = ({ children }) => {
-  return <Title>{children}</Title>;
+const DocSectionSubtitle = ({ children, className }) => {
+  return <Title className={className}>{children}</Title>;
 };
 
 export default DocSectionSubtitle;

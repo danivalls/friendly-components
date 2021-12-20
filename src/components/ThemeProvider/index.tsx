@@ -1,3 +1,4 @@
+import merge from 'lodash.merge';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { DefaultTheme, ThemeProvider as SCProvider } from 'styled-components';
@@ -24,7 +25,7 @@ const ThemeProvider: React.FC<ProviderProps> = ({
   successColor: success,
   neutralColor: neutral,
   textColor: text,
-  customTheme,
+  customTheme = {},
   children
 }) => {
   const baseTheme = generateTheme({
@@ -37,7 +38,7 @@ const ThemeProvider: React.FC<ProviderProps> = ({
     text
   });
 
-  const theme: DefaultTheme = { ...baseTheme, ...customTheme };
+  const theme: DefaultTheme = merge(baseTheme, customTheme);
 
   return (
     <SCProvider theme={theme}>
@@ -60,7 +61,3 @@ const ThemeProvider: React.FC<ProviderProps> = ({
 };
 
 export default ThemeProvider;
-
-ThemeProvider.defaultProps = {
-  customTheme: {}
-};

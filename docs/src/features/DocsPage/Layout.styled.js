@@ -19,7 +19,7 @@ export const Content = styled.main`
   overflow: auto;
 
   @media (min-width: 900px) {
+    border: 1px solid ${({ theme }) => theme.colors.neutralDark};
     border-top-left-radius: ${({ theme }) => theme.borderRadius.large};
-    border-bottom-left-radius: ${({ theme }) => theme.borderRadius.large};
   }
 `;

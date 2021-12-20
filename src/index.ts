@@ -1,5 +1,5 @@
-import ExampleComponent from './components/ExampleComponent';
+import Button from './components/Button';
 import ThemeProvider from './components/ThemeProvider';
 import generateTheme from './theme/index';
 
-export { ExampleComponent, ThemeProvider, generateTheme };
+export { ThemeProvider, generateTheme, Button };
