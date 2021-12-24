@@ -3,7 +3,8 @@ const spacing = {
   large: '48px',
   base: '24px',
   small: '16px',
-  tiny: '8px'
+  tiny: '8px',
+  micro: '4px'
 };
 
 export default spacing;
