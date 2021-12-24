@@ -3,6 +3,7 @@ import Docs from 'features/DocsPage';
 import Home from 'features/HomePage';
 import GettingStarted from 'features/Installation';
 import React from 'react';
+import SwitchDocs from '../features/SwitchDocs';
 
 export const docsRoutes = [
   {
@@ -15,6 +16,12 @@ export const docsRoutes = [
     label: 'Button',
     path: 'button',
     element: <ButtonDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Switch',
+    path: 'switch',
+    element: <SwitchDocs />,
     category: 'Components'
   }
 ];
