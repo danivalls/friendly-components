@@ -12,6 +12,7 @@ export const SwitchContainer = styled.label<ContainerProps>`
 
   cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'pointer')};
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   & > .switch-body {
     transform: scale(1);
