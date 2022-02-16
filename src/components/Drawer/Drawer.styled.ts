@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, {
+  css,
+  DefaultTheme,
+  FlattenSimpleInterpolation
+} from 'styled-components';
 import { Direction, DrawerBodyProps } from './types';
 
 const X_AXIS = ['left', 'right'];
@@ -8,10 +12,39 @@ const getPositioning = (
   direction: Direction,
   side: 'left' | 'right' | 'top' | 'bottom'
 ): string => {
-  const axis = X_AXIS.includes(direction) ? X_AXIS : Y_AXIS;
-  const opposite = axis.find((dir) => dir !== direction);
+  const axisDirections = X_AXIS.includes(direction) ? X_AXIS : Y_AXIS;
+  const opposite = axisDirections.find((dir) => dir !== direction);
 
   return opposite === side ? 'unset' : '0';
+};
+
+const getBorderRadiusStyles = (
+  rounded: boolean,
+  theme: DefaultTheme,
+  placement: Direction
+): FlattenSimpleInterpolation => {
+  if (!rounded) {
+    return css`
+      border-radius: unset;
+    `;
+  }
+
+  const borderRadius = theme?.borderRadius.large;
+  const axis = X_AXIS.includes(placement) ? 'x' : 'y';
+  const axisDirections = X_AXIS.includes(placement) ? X_AXIS : Y_AXIS;
+  const opposite = axisDirections.find((dir) => dir !== placement);
+
+  if (axis === 'x') {
+    return css`
+      border-top-${opposite}-radius: ${borderRadius};
+      border-bottom-${opposite}-radius: ${borderRadius};
+    `;
+  }
+
+  return css`
+      border-${opposite}-left-radius: ${borderRadius};
+      border-${opposite}-right-radius: ${borderRadius};
+  `;
 };
 
 const TRANSFORMING = {
@@ -36,6 +69,9 @@ export const DrawerBody = styled.aside<DrawerBodyProps>`
 
   padding: ${({ theme }): string => theme.spacing.base};
   background-color: white;
+
+  ${({ rounded, theme, placement }): FlattenSimpleInterpolation =>
+    getBorderRadiusStyles(rounded, theme, placement)}
 
   transform: ${({ visible, placement }): string =>
     visible ? 'translate(0, 0)' : TRANSFORMING[placement]};

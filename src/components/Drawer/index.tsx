@@ -12,6 +12,7 @@ interface Props {
   onClose: React.MouseEventHandler<HTMLElement>;
   size?: string;
   mountNode?: string | HTMLElement;
+  rounded?: boolean;
 }
 
 const Drawer: React.FC<Props> = ({
@@ -20,11 +21,17 @@ const Drawer: React.FC<Props> = ({
   placement = 'right',
   size = DEFAULT_SIZE,
   mountNode = document.body,
+  rounded = false,
   children
 }) => {
   return (
     <Portal target={mountNode}>
-      <DrawerBody visible={visible} placement={placement} size={size}>
+      <DrawerBody
+        visible={visible}
+        placement={placement}
+        size={size}
+        rounded={rounded}
+      >
         {children}
       </DrawerBody>
       <Mask visible={visible} onClick={onClose} />
