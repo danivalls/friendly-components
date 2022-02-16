@@ -1,6 +1,7 @@
 import React from 'react';
+import Mask from '../Mask';
 import Portal from '../Portal';
-import { DrawerBody, DrawerMask } from './Drawer.styled';
+import { DrawerBody } from './Drawer.styled';
 import { Direction } from './types';
 
 const DEFAULT_SIZE = '378px';
@@ -26,7 +27,7 @@ const Drawer: React.FC<Props> = ({
       <DrawerBody visible={visible} placement={placement} size={size}>
         {children}
       </DrawerBody>
-      <DrawerMask visible={visible} onClick={onClose} />
+      <Mask visible={visible} onClick={onClose} />
     </Portal>
   );
 };

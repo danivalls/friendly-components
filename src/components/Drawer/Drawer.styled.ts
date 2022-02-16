@@ -1,26 +1,8 @@
 import styled from 'styled-components';
-import { Direction, DrawerBodyProps, DrawerMaskProps } from './types';
+import { Direction, DrawerBodyProps } from './types';
 
 const X_AXIS = ['left', 'right'];
 const Y_AXIS = ['top', 'bottom'];
-
-export const DrawerMask = styled.div.attrs(() => ({
-  'aria-label': 'drawer-mask'
-}))<DrawerMaskProps>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-
-  pointer-events: ${({ visible }): string => (visible ? 'all' : 'none')};
-  opacity: ${({ visible }): number => (visible ? 0.25 : 0)};
-  background-color: black;
-  transition: all 0.3s;
-
-  overflow: hidden;
-`;
 
 const getPositioning = (
   direction: Direction,

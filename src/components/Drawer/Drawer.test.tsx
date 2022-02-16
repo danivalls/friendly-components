@@ -30,7 +30,7 @@ describe('Drawer', () => {
   it('renders a mask when visible prop is true', () => {
     renderDrawer();
 
-    const mask = screen.getByLabelText('drawer-mask');
+    const mask = screen.getByLabelText('mask');
 
     expect(mask).toBeVisible();
   });
@@ -38,7 +38,7 @@ describe('Drawer', () => {
   it('does not render a mask when visible prop is false', () => {
     renderDrawer(false);
 
-    const mask = screen.getByLabelText('drawer-mask');
+    const mask = screen.getByLabelText('mask');
 
     expect(mask).not.toBeVisible();
   });
@@ -87,7 +87,7 @@ describe('Drawer', () => {
     const callback = jest.fn();
     renderDrawer(undefined, callback);
 
-    const mask = screen.getByLabelText('drawer-mask');
+    const mask = screen.getByLabelText('mask');
 
     userEvent.click(mask);
 
