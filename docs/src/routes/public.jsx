@@ -1,5 +1,6 @@
 import ButtonDocs from 'features/ButtonDocs';
 import Docs from 'features/DocsPage';
+import DrawerDocs from 'features/DrawerDocs';
 import Home from 'features/HomePage';
 import GettingStarted from 'features/Installation';
 import React from 'react';
@@ -22,6 +23,12 @@ export const docsRoutes = [
     label: 'Switch',
     path: 'switch',
     element: <SwitchDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Drawer',
+    path: 'drawer',
+    element: <DrawerDocs />,
     category: 'Components'
   }
 ];

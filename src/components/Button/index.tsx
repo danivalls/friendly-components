@@ -15,9 +15,9 @@ const RIPPLE_DURATION = 500;
 const Button: React.FC<ButtonProps> = ({
   color = 'primary',
   type = 'default',
-  children,
+  onClick,
   className = '',
-  onClick
+  children
 }) => {
   const [ripples, setRipples] = useState<RippleElement[]>([]);
   const mounted = useRef(false);

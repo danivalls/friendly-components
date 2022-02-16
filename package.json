@@ -1,6 +1,6 @@
 {
   "name": "friendly-components",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A react components library made with ❤️",
   "author": "danivalls",
   "license": "MIT",
@@ -22,7 +22,8 @@
     "deploy": "gh-pages -d docs/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.11.1",
