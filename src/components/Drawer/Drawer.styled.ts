@@ -3,7 +3,7 @@ import styled, {
   DefaultTheme,
   FlattenSimpleInterpolation
 } from 'styled-components';
-import { Direction, DrawerBodyProps } from './types';
+import { Direction, DrawerBodyProps } from './Drawer.types';
 
 const X_AXIS = ['left', 'right'];
 const Y_AXIS = ['top', 'bottom'];

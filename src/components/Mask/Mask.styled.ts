@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { MaskProps } from './types';
+import { MaskProps } from './Mask.types';
 
 export const MaskCover = styled.div.attrs(() => ({
   'aria-label': 'mask'

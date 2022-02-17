@@ -6,18 +6,9 @@ import {
   SwitchControl,
   SwitchIndicator
 } from './Switch.styled';
+import { SwitchProps } from './Switch.types';
 
-interface Props {
-  onChange: Function;
-  value: boolean;
-  color?: string;
-  label?: string;
-  labelPosition?: 'left' | 'right';
-  disabled?: boolean;
-  keepColor?: boolean;
-}
-
-const Switch: React.FC<Props> = ({
+const Switch: React.FC<SwitchProps> = ({
   onChange,
   value,
   color = 'primary',

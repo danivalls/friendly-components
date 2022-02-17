@@ -1,9 +1,7 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
+import { PortalProps } from './Portal.types';
 
-interface PortalProps {
-  target: string | HTMLElement;
-}
 const Portal: React.FC<PortalProps> = ({ target, children }) => {
   const domElement =
     typeof target === 'string' ? document.querySelector(target) : target;

@@ -4,18 +4,7 @@ import { Helmet } from 'react-helmet';
 import { DefaultTheme, ThemeProvider as SCProvider } from 'styled-components';
 import generateTheme from '../../theme';
 import GlobalStyles from './GlobalStyles';
-
-interface ProviderProps {
-  primaryColor?: string;
-  secondaryColor?: string;
-  errorColor?: string;
-  warningColor?: string;
-  successColor?: string;
-  neutralColor?: string;
-  textColor?: string;
-  customTheme?: any;
-  children: React.ReactNode;
-}
+import { ProviderProps } from './ThemeProvider.types';
 
 const ThemeProvider: React.FC<ProviderProps> = ({
   primaryColor: primary,

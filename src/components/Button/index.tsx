@@ -1,14 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BaseButton, Ripple } from './Button.styled';
-import { RippleElement } from './types';
-
-interface ButtonProps {
-  color?: string;
-  type?: 'default' | 'outlined';
-  children?: React.ReactNode | string;
-  className?: string;
-  onClick?: Function;
-}
+import { ButtonProps, RippleElement } from './Button.types';
 
 const RIPPLE_DURATION = 500;
 

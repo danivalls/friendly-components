@@ -2,20 +2,11 @@ import React from 'react';
 import Mask from '../Mask';
 import Portal from '../Portal';
 import { DrawerBody } from './Drawer.styled';
-import { Direction } from './types';
+import { DrawerProps } from './Drawer.types';
 
 const DEFAULT_SIZE = '378px';
 
-interface Props {
-  visible: boolean;
-  placement?: Direction;
-  onClose: React.MouseEventHandler<HTMLElement>;
-  size?: string;
-  mountNode?: string | HTMLElement;
-  rounded?: boolean;
-}
-
-const Drawer: React.FC<Props> = ({
+const Drawer: React.FC<DrawerProps> = ({
   visible,
   onClose,
   placement = 'right',

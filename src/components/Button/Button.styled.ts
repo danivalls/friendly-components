@@ -1,5 +1,5 @@
 import styled, { DefaultTheme, keyframes } from 'styled-components';
-import { BaseButtonProps, RippleProps } from './types';
+import { BaseButtonProps, RippleProps } from './Button.types';
 
 const generatePadding = ({ theme }: { theme: DefaultTheme }): string => {
   const { small, tiny } = theme.spacing;

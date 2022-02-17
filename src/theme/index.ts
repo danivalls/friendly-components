@@ -5,7 +5,7 @@ import fontSize from './fontSize';
 import fontWeight from './fontWeight';
 import lineHeight from './lineHeight';
 import spacing from './spacing';
-import { BaseColors } from './types';
+import { BaseColors } from './theme.types';
 
 const generateTheme = (baseColors: BaseColors): DefaultTheme => {
   const colors = generateColors(baseColors);

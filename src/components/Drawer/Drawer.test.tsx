@@ -3,7 +3,7 @@ import { lorem } from 'faker';
 import React from 'react';
 import Drawer from '.';
 import { render, screen } from '../../test-utils/customRender';
-import { Direction } from './types';
+import { Direction } from './Drawer.types';
 
 const renderDrawer = (
   visible = true,

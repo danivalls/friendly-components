@@ -1,5 +1,5 @@
 import tinycolor from 'tinycolor2';
-import { BaseColors, ColorsType } from './types';
+import { BaseColors, ColorsType } from './theme.types';
 
 export const DEFAULT_COLORS = {
   primary: '#3DB2FF',

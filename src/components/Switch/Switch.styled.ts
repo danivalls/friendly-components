@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import {
+  SwitchBodyProps,
+  SwitchContainerProps,
+  SwitchIndicatorProps
+} from './Switch.types';
 
-interface ContainerProps {
-  labelPosition: string;
-  disabled: boolean;
-}
-export const SwitchContainer = styled.label<ContainerProps>`
+export const SwitchContainer = styled.label<SwitchContainerProps>`
   display: inline-flex;
   align-items: center;
   flex-direction: ${({ labelPosition }): string =>
@@ -33,16 +34,10 @@ export const SwitchContainer = styled.label<ContainerProps>`
   }
 `;
 
-interface BodyProps {
-  bgColor: string;
-  checked: boolean;
-  disabled: boolean;
-  keepColor: boolean;
-}
 export const SwitchBody = styled.div.attrs(() => ({
   'aria-label': 'switch',
   className: 'switch-body'
-}))<BodyProps>`
+}))<SwitchBodyProps>`
   opacity: ${({ disabled }): number => (disabled ? 0.5 : 1)};
 
   display: inline-flex;
@@ -76,12 +71,9 @@ export const SwitchBody = styled.div.attrs(() => ({
   transition: all 0.3s;
 `;
 
-interface IndicatorProps {
-  checked: boolean;
-}
 export const SwitchIndicator = styled.div.attrs(() => ({
   'aria-label': 'switch-indicator'
-}))<IndicatorProps>`
+}))<SwitchIndicatorProps>`
   width: ${({ theme }): string => theme.spacing.base};
   height: ${({ theme }): string => theme.spacing.base};
   background-color: white;

@@ -4,7 +4,7 @@ import fontSize from './fontSize';
 import fontWeight from './fontWeight';
 import lineHeight from './lineHeight';
 import spacing from './spacing';
-import { ColorsType } from './types';
+import { ColorsType } from './theme.types';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
