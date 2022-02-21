@@ -4,6 +4,7 @@ import DrawerDocs from 'features/DrawerDocs';
 import Home from 'features/HomePage';
 import GettingStarted from 'features/Installation';
 import React from 'react';
+import IconDocs from '../features/IconDocs';
 import SwitchDocs from '../features/SwitchDocs';
 
 export const docsRoutes = [
@@ -29,6 +30,12 @@ export const docsRoutes = [
     label: 'Drawer',
     path: 'drawer',
     element: <DrawerDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Icon',
+    path: 'icon',
+    element: <IconDocs />,
     category: 'Components'
   }
 ];
