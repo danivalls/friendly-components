@@ -16,7 +16,7 @@ export default DocTemplate;
 
 DocHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.arrayOf(PropTypes.node)
 };
 

@@ -18,6 +18,7 @@
     "friendly-components": "link:..",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
+    "react-lazyload": "^3.2.0",
     "react-router-dom": "^6.0.2",
     "react-scripts": "link:../node_modules/react-scripts",
     "react-syntax-highlighter": "^15.4.5",

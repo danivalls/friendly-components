@@ -15,7 +15,7 @@ export default DocHeader;
 
 DocHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 DocHeader.defaultProps = {
