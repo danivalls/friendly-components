@@ -2,17 +2,27 @@ import userEvent from '@testing-library/user-event';
 import { lorem } from 'faker';
 import React from 'react';
 import Drawer from '.';
-import { render, screen } from '../../test-utils/customRender';
-import { Direction } from './Drawer.types';
+import { render, screen, usedTheme } from '../../test-utils/customRender';
+import { DrawerProps } from './Drawer.types';
 
-const renderDrawer = (
+interface RenderArgs extends Partial<DrawerProps> {
+  content?: string;
+}
+
+const renderDrawer = ({
   visible = true,
   onClose = jest.fn(),
-  placement?: Direction,
-  content = lorem.paragraph()
-): void => {
+  content = lorem.paragraph(),
+  rounded,
+  placement
+}: RenderArgs = {}): void => {
   render(
-    <Drawer visible={visible} onClose={onClose} placement={placement}>
+    <Drawer
+      visible={visible}
+      onClose={onClose}
+      placement={placement}
+      rounded={rounded}
+    >
       {content}
     </Drawer>
   );
@@ -36,7 +46,7 @@ describe('Drawer', () => {
   });
 
   it('does not render a mask when visible prop is false', () => {
-    renderDrawer(false);
+    renderDrawer({ visible: false });
 
     const mask = screen.getByLabelText('mask');
 
@@ -52,7 +62,7 @@ describe('Drawer', () => {
   });
 
   it('renders aside element at right when direction value is right', () => {
-    renderDrawer(undefined, undefined, 'right');
+    renderDrawer({ placement: 'right' });
 
     const aside = screen.getByRole('complementary');
 
@@ -60,7 +70,7 @@ describe('Drawer', () => {
   });
 
   it('renders aside element at right when direction value is left', () => {
-    renderDrawer(undefined, undefined, 'left');
+    renderDrawer({ placement: 'left' });
 
     const aside = screen.getByRole('complementary');
 
@@ -68,7 +78,7 @@ describe('Drawer', () => {
   });
 
   it('renders aside element at bottom when direction value is bottom', () => {
-    renderDrawer(undefined, undefined, 'bottom');
+    renderDrawer({ placement: 'bottom' });
 
     const aside = screen.getByRole('complementary');
 
@@ -76,7 +86,7 @@ describe('Drawer', () => {
   });
 
   it('renders aside element at top when direction value is top', () => {
-    renderDrawer(undefined, undefined, 'top');
+    renderDrawer({ placement: 'top' });
 
     const aside = screen.getByRole('complementary');
 
@@ -85,12 +95,47 @@ describe('Drawer', () => {
 
   it('calls onClose callback when mask is clicked', () => {
     const callback = jest.fn();
-    renderDrawer(undefined, callback);
+    renderDrawer({ onClose: callback });
 
     const mask = screen.getByLabelText('mask');
 
     userEvent.click(mask);
 
     expect(callback).toHaveBeenCalled();
+  });
+
+  it('has rounded borders on its opposite side when rounded prop is true and position is left or right', () => {
+    renderDrawer({ rounded: true, placement: 'right' });
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).toHaveStyle(
+      `border-top-left-radius: ${usedTheme.borderRadius.large};
+      border-bottom-left-radius: ${usedTheme.borderRadius.large}`
+    );
+  });
+
+  it('has rounded borders on its opposite side when rounded prop is true and position is top or bottom', () => {
+    renderDrawer({ rounded: true, placement: 'bottom' });
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).toHaveStyle(
+      `border-top-left-radius: ${usedTheme.borderRadius.large};
+      border-top-right-radius: ${usedTheme.borderRadius.large}`
+    );
+  });
+
+  it('does not have rounded borders by default', () => {
+    renderDrawer();
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).not.toHaveStyle(
+      `border-top-left-radius: ${usedTheme.borderRadius.large}`
+    );
+    expect(aside).not.toHaveStyle(
+      `border-top-left-radius: ${usedTheme.borderRadius.large}`
+    );
   });
 });

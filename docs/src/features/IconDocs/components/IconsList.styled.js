@@ -22,6 +22,8 @@ export const IconWrapper = styled.div`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.textLight};
 
+  cursor: pointer;
+
   transition: all 0.3s;
 
   &:hover {
