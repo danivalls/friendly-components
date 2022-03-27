@@ -2,6 +2,7 @@ import ButtonDocs from 'features/ButtonDocs';
 import Docs from 'features/DocsPage';
 import DrawerDocs from 'features/DrawerDocs';
 import Home from 'features/HomePage';
+import InputDocs from 'features/InputDocs';
 import GettingStarted from 'features/Installation';
 import React from 'react';
 import IconDocs from '../features/IconDocs';
@@ -36,6 +37,12 @@ export const docsRoutes = [
     label: 'Icon',
     path: 'icon',
     element: <IconDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Input',
+    path: 'input',
+    element: <InputDocs />,
     category: 'Components'
   }
 ];

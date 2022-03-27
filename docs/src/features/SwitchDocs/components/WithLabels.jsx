@@ -2,7 +2,8 @@ import { Switch } from 'friendly-components';
 import React, { useState } from 'react';
 
 const WithLabels = () => {
-  const [value, setValue] = useState(true);
+  const [valueLeft, setValueLeft] = useState(true);
+  const [valueRight, setValueRight] = useState(true);
 
   return (
     <div
@@ -12,10 +13,14 @@ const WithLabels = () => {
         alignItems: 'center'
       }}
     >
-      <Switch value={value} onChange={setValue} label="Label at right" />
       <Switch
-        value={value}
-        onChange={setValue}
+        value={valueLeft}
+        onChange={setValueLeft}
+        label="Label at right"
+      />
+      <Switch
+        value={valueRight}
+        onChange={setValueRight}
         label="Label at left"
         labelPosition="left"
       />
@@ -27,17 +32,24 @@ export default WithLabels;
 
 WithLabels.code = `
 import { Switch } from 'friendly-components';
-import React from 'react';
+import React, { useState } from 'react';
 
 const WithLabels = () => {
+  const [valueLeft, setValueLeft] = useState(true);
+  const [valueRight, setValueRight] = useState(true);
+
+
   return (
-    <div style={{ display: 'inline-flex', flexFlow: 'column' }}>
-      <Switch value={value} onChange={setValue} label='Label at right' />
-      <Switch value={value} onChange={setValue} label='Label at left' labelPosition='left' />
+    <div
+      style={{
+        display: 'inline-flex',
+        flexFlow: 'column',
+        alignItems: 'center'
+      }}
+    >
+      <Switch value={valueLeft} onChange={setValueLeft} label="Label at right" />
+      <Switch value={valueRight} onChange={setValueRight} label="Label at left" labelPosition="left" />
     </div>
   );
 };
-
-export default WithLabels;
-
 `;
