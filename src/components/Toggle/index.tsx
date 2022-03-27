@@ -1,14 +1,14 @@
 import React, { SyntheticEvent } from 'react';
 import {
   LabelText,
-  SwitchBody,
-  SwitchContainer,
-  SwitchControl,
-  SwitchIndicator
-} from './Switch.styled';
-import { SwitchProps } from './Switch.types';
+  ToggleBody,
+  ToggleContainer,
+  ToggleControl,
+  ToggleIndicator
+} from './Toggle.styled';
+import { ToggleProps } from './Toggle.types';
 
-const Switch: React.FC<SwitchProps> = ({
+const Toggle: React.FC<ToggleProps> = ({
   onChange,
   value,
   color = 'primary',
@@ -17,28 +17,28 @@ const Switch: React.FC<SwitchProps> = ({
   disabled = false,
   keepColor = false
 }) => {
-  const handleSwitchChange = (e: SyntheticEvent): void => {
+  const handleToggleChange = (e: SyntheticEvent): void => {
     const target = e.target as HTMLInputElement;
     onChange(target.checked);
   };
   return (
-    <SwitchContainer labelPosition={labelPosition} disabled={disabled}>
-      <SwitchControl
+    <ToggleContainer labelPosition={labelPosition} disabled={disabled}>
+      <ToggleControl
         checked={value}
-        onChange={handleSwitchChange}
+        onChange={handleToggleChange}
         disabled={disabled}
       />
-      <SwitchBody
+      <ToggleBody
         bgColor={color}
         checked={value}
         disabled={disabled}
         keepColor={keepColor}
       >
-        <SwitchIndicator checked={value} />
-      </SwitchBody>
+        <ToggleIndicator checked={value} />
+      </ToggleBody>
       {!!label && <LabelText>{label}</LabelText>}
-    </SwitchContainer>
+    </ToggleContainer>
   );
 };
 
-export default Switch;
+export default Toggle;

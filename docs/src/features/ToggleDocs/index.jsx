@@ -7,9 +7,9 @@ import CustomColor from './components/CustomColor';
 import Disable from './components/Disable';
 import WithLabels from './components/WithLabels';
 
-const SwitchDocs = () => {
+const ToggleDocs = () => {
   return (
-    <DocTemplate title="Switch">
+    <DocTemplate title="Toggle">
       <DocSectionTitle>Usage</DocSectionTitle>
       <DocExampleRenderer code={BasicUsage.code} title="Basic">
         <BasicUsage />
@@ -27,4 +27,4 @@ const SwitchDocs = () => {
   );
 };
 
-export default SwitchDocs;
+export default ToggleDocs;

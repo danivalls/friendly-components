@@ -1,4 +1,4 @@
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 
 const WithLabels = () => {
@@ -13,12 +13,12 @@ const WithLabels = () => {
         alignItems: 'center'
       }}
     >
-      <Switch
+      <Toggle
         value={valueLeft}
         onChange={setValueLeft}
         label="Label at right"
       />
-      <Switch
+      <Toggle
         value={valueRight}
         onChange={setValueRight}
         label="Label at left"
@@ -31,7 +31,7 @@ const WithLabels = () => {
 export default WithLabels;
 
 WithLabels.code = `
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 
 const WithLabels = () => {
@@ -47,8 +47,8 @@ const WithLabels = () => {
         alignItems: 'center'
       }}
     >
-      <Switch value={valueLeft} onChange={setValueLeft} label="Label at right" />
-      <Switch value={valueRight} onChange={setValueRight} label="Label at left" labelPosition="left" />
+      <Toggle value={valueLeft} onChange={setValueLeft} label="Label at right" />
+      <Toggle value={valueRight} onChange={setValueRight} label="Label at left" labelPosition="left" />
     </div>
   );
 };

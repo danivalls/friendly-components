@@ -1,10 +1,10 @@
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 
 const Disable = () => {
   const [value, setValue] = useState(true);
   return (
-    <Switch
+    <Toggle
       value={value}
       onChange={setValue}
       label="This switch is disabled"
@@ -16,13 +16,13 @@ const Disable = () => {
 export default Disable;
 
 Disable.code = `
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 
 const Disable = () => {
   const [value, setValue] = useState(true);
   return (
-    <Switch
+    <Toggle
       value={value}
       onChange={setValue}
       label="This switch is disabled"

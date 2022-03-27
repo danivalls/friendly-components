@@ -3,8 +3,8 @@ import Drawer from './components/Drawer';
 import Icon from './components/Icon';
 import iconNames from './components/Icon/iconNames';
 import Input from './components/Input';
-import Switch from './components/Switch';
 import ThemeProvider from './components/ThemeProvider';
+import Toggle from './components/Toggle';
 import generateTheme from './theme/index';
 
 export {
@@ -14,6 +14,6 @@ export {
   Icon,
   iconNames,
   Input,
-  Switch,
+  Toggle,
   ThemeProvider
 };

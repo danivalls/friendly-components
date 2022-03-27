@@ -6,7 +6,7 @@ import InputDocs from 'features/InputDocs';
 import GettingStarted from 'features/Installation';
 import React from 'react';
 import IconDocs from '../features/IconDocs';
-import SwitchDocs from '../features/SwitchDocs';
+import ToggleDocs from '../features/ToggleDocs';
 
 export const docsRoutes = [
   {
@@ -22,9 +22,9 @@ export const docsRoutes = [
     category: 'Components'
   },
   {
-    label: 'Switch',
-    path: 'switch',
-    element: <SwitchDocs />,
+    label: 'Toggle',
+    path: 'toggle',
+    element: <ToggleDocs />,
     category: 'Components'
   },
   {

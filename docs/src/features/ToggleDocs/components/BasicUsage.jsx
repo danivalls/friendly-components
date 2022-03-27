@@ -1,4 +1,4 @@
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 import { Showcase } from './Showcase';
 
@@ -11,15 +11,15 @@ const BasicUsage = () => {
 
   return (
     <Showcase>
-      <Switch value={valuePrimary} onChange={setValuePrimary} />
-      <Switch
+      <Toggle value={valuePrimary} onChange={setValuePrimary} />
+      <Toggle
         value={valueSecondary}
         onChange={setValueSecondary}
         color="secondary"
       />
-      <Switch value={valueSuccess} onChange={setValueSuccess} color="success" />
-      <Switch value={valueWarning} onChange={setValueWarning} color="warning" />
-      <Switch value={valueError} onChange={setValueError} color="error" />
+      <Toggle value={valueSuccess} onChange={setValueSuccess} color="success" />
+      <Toggle value={valueWarning} onChange={setValueWarning} color="warning" />
+      <Toggle value={valueError} onChange={setValueError} color="error" />
     </Showcase>
   );
 };
@@ -27,7 +27,7 @@ const BasicUsage = () => {
 export default BasicUsage;
 
 BasicUsage.code = `
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 import { Showcase } from './Showcase';
 
@@ -40,11 +40,11 @@ const BasicUsage = () => {
 
   return (
     <Showcase>
-      <Switch value={valuePrimary} onChange={setValuePrimary} />
-      <Switch value={valueSecondary} onChange={setValueSecondary} color="secondary" />
-      <Switch value={valueSuccess} onChange={setValueSuccess} color="success" />
-      <Switch value={valueWarning} onChange={setValueWarning} color="warning" />
-      <Switch value={valueError} onChange={setValueError} color="error" />
+      <Toggle value={valuePrimary} onChange={setValuePrimary} />
+      <Toggle value={valueSecondary} onChange={setValueSecondary} color="secondary" />
+      <Toggle value={valueSuccess} onChange={setValueSuccess} color="success" />
+      <Toggle value={valueWarning} onChange={setValueWarning} color="warning" />
+      <Toggle value={valueError} onChange={setValueError} color="error" />
     </Showcase>
   );
 };

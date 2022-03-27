@@ -1,4 +1,4 @@
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 import { Showcase } from './Showcase';
 
@@ -8,12 +8,12 @@ const CustomColor = () => {
 
   return (
     <Showcase>
-      <Switch
+      <Toggle
         value={valueFirst}
         onChange={setValueFirst}
         color="rebeccapurple"
       />
-      <Switch value={valueSecond} onChange={setValueSecond} color="#90105F" />
+      <Toggle value={valueSecond} onChange={setValueSecond} color="#90105F" />
     </Showcase>
   );
 };
@@ -21,7 +21,7 @@ const CustomColor = () => {
 export default CustomColor;
 
 CustomColor.code = `
-import { Switch } from 'friendly-components';
+import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 import { Showcase } from './Showcase';
 
@@ -31,8 +31,8 @@ const CustomColor = () => {
 
   return (
     <Showcase>
-      <Switch value={valueFirst} onChange={setValueFirst} color="rebeccapurple" />
-      <Switch value={valueSecond} onChange={setValueSecond} color="#90105F" />
+      <Toggle value={valueFirst} onChange={setValueFirst} color="rebeccapurple" />
+      <Toggle value={valueSecond} onChange={setValueSecond} color="#90105F" />
     </Showcase>
   );
 };

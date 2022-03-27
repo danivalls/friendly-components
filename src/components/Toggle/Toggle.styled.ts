@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import {
-  SwitchBodyProps,
-  SwitchContainerProps,
-  SwitchIndicatorProps
-} from './Switch.types';
+  ToggleBodyProps,
+  ToggleContainerProps,
+  ToggleIndicatorProps
+} from './Toggle.types';
 
-export const SwitchContainer = styled.label<SwitchContainerProps>`
+export const ToggleContainer = styled.label<ToggleContainerProps>`
   display: inline-flex;
   align-items: center;
   flex-direction: ${({ labelPosition }): string =>
@@ -15,7 +15,7 @@ export const SwitchContainer = styled.label<SwitchContainerProps>`
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
-  & > .switch-body {
+  & > .toggle-body {
     transform: scale(1);
     transition: all 0.5s cubic-bezier(0.44, 0.32, 0.37, 1.44);
   }
@@ -26,7 +26,7 @@ export const SwitchContainer = styled.label<SwitchContainerProps>`
     }
   }
 
-  & > .switch-label {
+  & > .toggle-label {
     margin-left: ${({ theme, labelPosition }): string =>
       labelPosition === 'right' ? theme.spacing.small : '0'};
     margin-right: ${({ theme, labelPosition }): string =>
@@ -34,10 +34,10 @@ export const SwitchContainer = styled.label<SwitchContainerProps>`
   }
 `;
 
-export const SwitchBody = styled.div.attrs(() => ({
-  'aria-label': 'switch',
-  className: 'switch-body'
-}))<SwitchBodyProps>`
+export const ToggleBody = styled.div.attrs(() => ({
+  'aria-label': 'toggle',
+  className: 'toggle-body'
+}))<ToggleBodyProps>`
   opacity: ${({ disabled }): number => (disabled ? 0.5 : 1)};
 
   display: inline-flex;
@@ -71,9 +71,9 @@ export const SwitchBody = styled.div.attrs(() => ({
   transition: all 0.5s;
 `;
 
-export const SwitchIndicator = styled.div.attrs(() => ({
-  'aria-label': 'switch-indicator'
-}))<SwitchIndicatorProps>`
+export const ToggleIndicator = styled.div.attrs(() => ({
+  'aria-label': 'toggle-indicator'
+}))<ToggleIndicatorProps>`
   width: ${({ theme }): string => theme.spacing.base};
   height: ${({ theme }): string => theme.spacing.base};
   background-color: white;
@@ -86,11 +86,11 @@ export const SwitchIndicator = styled.div.attrs(() => ({
 `;
 
 export const LabelText = styled.span.attrs(() => ({
-  'aria-label': 'switch-label',
-  className: 'switch-label'
+  'aria-label': 'toggle-label',
+  className: 'toggle-label'
 }))``;
 
-export const SwitchControl = styled.input.attrs(() => ({
+export const ToggleControl = styled.input.attrs(() => ({
   type: 'checkbox'
 }))`
   display: none;

@@ -1,18 +1,18 @@
 import userEvent from '@testing-library/user-event';
 import { lorem } from 'faker';
 import React from 'react';
-import Switch from '.';
+import Toggle from '.';
 import { render, screen, usedTheme } from '../../test-utils/customRender';
 
-describe('Switch', () => {
+describe('Toggle', () => {
   it('calls given onChange callback when clicked if not disabled', () => {
     const callback = jest.fn();
     const initialValue = true;
-    render(<Switch value={initialValue} onChange={callback} />);
+    render(<Toggle value={initialValue} onChange={callback} />);
 
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    userEvent.click(switchControl);
+    userEvent.click(toggleControl);
 
     expect(callback).toHaveBeenCalledWith(!initialValue);
   });
@@ -20,18 +20,18 @@ describe('Switch', () => {
   it('does not call given onChange callback when clicked if disabled', () => {
     const callback = jest.fn();
     const initialValue = true;
-    render(<Switch value={initialValue} onChange={callback} disabled />);
+    render(<Toggle value={initialValue} onChange={callback} disabled />);
 
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    userEvent.click(switchControl);
+    userEvent.click(toggleControl);
 
     expect(callback).not.toHaveBeenCalled();
   });
 
   it('renders given label text when provided', () => {
     const label = lorem.words(2);
-    render(<Switch label={label} value={true} onChange={jest.fn()} />);
+    render(<Toggle label={label} value={true} onChange={jest.fn()} />);
 
     const renderedLabel = screen.getByText(label);
 
@@ -39,27 +39,27 @@ describe('Switch', () => {
   });
 
   it('renders a displaced indicator when value is true', () => {
-    render(<Switch value={true} onChange={jest.fn()} />);
+    render(<Toggle value={true} onChange={jest.fn()} />);
 
-    const indicator = screen.getByLabelText('switch-indicator');
+    const indicator = screen.getByLabelText('toggle-indicator');
 
     expect(indicator).not.toHaveStyle('margin-left: 0');
   });
 
   it('renders a placed indicator when value is false', () => {
-    render(<Switch value={false} onChange={jest.fn()} />);
+    render(<Toggle value={false} onChange={jest.fn()} />);
 
-    const indicator = screen.getByLabelText('switch-indicator');
+    const indicator = screen.getByLabelText('toggle-indicator');
 
     expect(indicator).toHaveStyle('margin-left: calc(100% - 100%);');
   });
 
   it('renders a gradient with provided color as background', () => {
-    render(<Switch value={true} onChange={jest.fn()} />);
+    render(<Toggle value={true} onChange={jest.fn()} />);
 
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    expect(switchControl).toHaveStyle(`background: radial-gradient(
+    expect(toggleControl).toHaveStyle(`background: radial-gradient(
       circle,
       ${usedTheme.colors.primary} 49.9%,
       ${usedTheme.colors.neutral} 50%
@@ -67,11 +67,11 @@ describe('Switch', () => {
   });
 
   it('renders an alternative gradient with provided color as background when keepColor prop is true', () => {
-    render(<Switch value={true} onChange={jest.fn()} keepColor />);
+    render(<Toggle value={true} onChange={jest.fn()} keepColor />);
 
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    expect(switchControl).toHaveStyle(`background: radial-gradient(
+    expect(toggleControl).toHaveStyle(`background: radial-gradient(
       circle,
       ${usedTheme.colors.primary} 49.9%,
       ${usedTheme.colors.primaryLighter} 50%
@@ -80,7 +80,7 @@ describe('Switch', () => {
 
   it('renders an alternative gradient with provided custom color as background when keepColor prop is true', () => {
     render(
-      <Switch
+      <Toggle
         value={true}
         onChange={jest.fn()}
         color="rebeccapurple"
@@ -88,9 +88,9 @@ describe('Switch', () => {
       />
     );
 
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    expect(switchControl).toHaveStyle(`background: radial-gradient(
+    expect(toggleControl).toHaveStyle(`background: radial-gradient(
       circle,
       rebeccapurple 49.9%,
       rebeccapurple 50%
@@ -99,40 +99,40 @@ describe('Switch', () => {
 
   it('renders a background-color with the provided color when keepColor prop is true and value is false', () => {
     render(
-      <Switch value={false} onChange={jest.fn()} color="primary" keepColor />
+      <Toggle value={false} onChange={jest.fn()} color="primary" keepColor />
     );
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    expect(switchControl).toHaveStyle(
+    expect(toggleControl).toHaveStyle(
       `background-color: ${usedTheme.colors.primaryLighter};`
     );
   });
 
   it('renders a background-color with the provided custom color when keepColor prop is true and value is false', () => {
     render(
-      <Switch
+      <Toggle
         value={false}
         onChange={jest.fn()}
         color="rebeccapurple"
         keepColor
       />
     );
-    const switchControl = screen.getByLabelText('switch');
+    const toggleControl = screen.getByLabelText('toggle');
 
-    expect(switchControl).toHaveStyle('background-color: rebeccapurple;');
+    expect(toggleControl).toHaveStyle('background-color: rebeccapurple;');
   });
 
   it('dims its opacity when its disabled', () => {
-    render(<Switch value={false} onChange={jest.fn()} disabled />);
-    const switchControl = screen.getByLabelText('switch');
+    render(<Toggle value={false} onChange={jest.fn()} disabled />);
+    const toggleControl = screen.getByLabelText('toggle');
 
-    expect(switchControl).toHaveStyle('opacity: 0.5');
+    expect(toggleControl).toHaveStyle('opacity: 0.5');
   });
 
   it('adds a margin-right when has a label and labelPosition is left', () => {
     const label = lorem.word();
     render(
-      <Switch
+      <Toggle
         value={false}
         onChange={jest.fn()}
         label={label}

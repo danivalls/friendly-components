@@ -1,6 +1,6 @@
 export type LabelPosition = 'left' | 'right';
 
-export interface SwitchProps {
+export interface ToggleProps {
   onChange: Function;
   value: boolean;
   color?: string;
@@ -10,18 +10,18 @@ export interface SwitchProps {
   keepColor?: boolean;
 }
 
-export interface SwitchContainerProps {
+export interface ToggleContainerProps {
   labelPosition: LabelPosition;
   disabled: boolean;
 }
 
-export interface SwitchBodyProps {
+export interface ToggleBodyProps {
   bgColor: string;
   checked: boolean;
   disabled: boolean;
   keepColor: boolean;
 }
 
-export interface SwitchIndicatorProps {
+export interface ToggleIndicatorProps {
   checked: boolean;
 }
