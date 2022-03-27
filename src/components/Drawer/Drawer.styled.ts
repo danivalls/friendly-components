@@ -67,6 +67,11 @@ export const DrawerBody = styled.aside<DrawerBodyProps>`
   height: ${({ size, placement: placement }): string =>
     Y_AXIS.includes(placement) ? size : 'unset'};
 
+  max-width: ${({ placement }): string =>
+    X_AXIS.includes(placement) ? '80vw' : 'unset'};
+  max-height: ${({ placement }): string =>
+    Y_AXIS.includes(placement) ? '80vh' : 'unset'};
+
   padding: ${({ theme }): string => theme.spacing.base};
   background-color: white;
 
