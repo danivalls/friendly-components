@@ -48,7 +48,9 @@ export const InputBody = styled.input`
   }
 `;
 
-export const IconContainer = styled.div<IconContainerProps>`
+export const IconContainer = styled.div.attrs(() => ({
+  'aria-label': 'icon-container'
+}))<IconContainerProps>`
   grid-area: prepend;
 
   display: flex;

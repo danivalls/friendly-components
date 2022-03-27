@@ -1,22 +1,12 @@
 import { IconName } from '../Icon/Icon.types';
 
-const inputTypes = [
-  'text',
-  'number',
-  'password',
-  'date',
-  'time',
-  'month',
-  'week'
-] as const;
-
 export interface InputProps {
   value: string;
   onChange: Function;
   label?: string;
   placeholder?: string;
-  type?: typeof inputTypes[number];
   icon?: IconName;
+  type?: 'text' | 'number' | 'password' | 'date' | 'time' | 'month' | 'week';
 }
 
 export interface InputContainerProps {
