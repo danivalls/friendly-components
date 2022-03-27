@@ -28,6 +28,8 @@ export const InputBody = styled.input`
   border: none;
   padding-left: 0;
 
+  -webkit-user-select: text;
+
   opacity: 0.8;
 
   transition: all 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);

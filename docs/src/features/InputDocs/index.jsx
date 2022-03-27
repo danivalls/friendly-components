@@ -14,7 +14,7 @@ const InputDocs = () => {
       <DocExampleRenderer title="Basic" code={BasicUsage.code}>
         <BasicUsage />
       </DocExampleRenderer>
-      <DocExampleRenderer title="Label" code={WithType.code}>
+      <DocExampleRenderer title="Label" code={WithLabel.code}>
         <WithLabel />
       </DocExampleRenderer>
       <DocExampleRenderer title="Icon" code={WithIcon.code}>
