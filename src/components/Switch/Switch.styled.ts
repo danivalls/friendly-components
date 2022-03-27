@@ -17,7 +17,7 @@ export const SwitchContainer = styled.label<SwitchContainerProps>`
 
   & > .switch-body {
     transform: scale(1);
-    transition: all 0.3s cubic-bezier(0.44, 0.32, 0.37, 1.44);
+    transition: all 0.5s cubic-bezier(0.44, 0.32, 0.37, 1.44);
   }
 
   &:active {
@@ -68,7 +68,7 @@ export const SwitchBody = styled.div.attrs(() => ({
   background-size: 450% 100%;
   background-position: ${({ checked }): string => (checked ? '50%' : '100%')} 0%;
 
-  transition: all 0.3s;
+  transition: all 0.5s;
 `;
 
 export const SwitchIndicator = styled.div.attrs(() => ({
@@ -82,7 +82,7 @@ export const SwitchIndicator = styled.div.attrs(() => ({
     100% -
       ${({ theme, checked }): string => (checked ? theme.spacing.base : '100%')}
   );
-  transition: all 0.3s cubic-bezier(0.4, 0.4, 0.4, 1.5);
+  transition: all 0.5s cubic-bezier(0.4, 0.4, 0.4, 1.5);
 `;
 
 export const LabelText = styled.span.attrs(() => ({

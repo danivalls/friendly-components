@@ -1,5 +1,5 @@
 import { useMinWidth } from 'hooks/useMinWidth';
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { useLocation, useRoutes } from 'react-router-dom';
 import { docsRoutes } from 'routes/public';
 import Drawer from './components/Drawer';
@@ -9,11 +9,13 @@ import { Content, DocsLayout } from './Layout.styled';
 const Layout = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const triggerResponsive = useMinWidth(900);
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const contentRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMenuVisible(false);
-  }, [location]);
+    contentRef.current.scrollTo(0, 0);
+  }, [pathname]);
 
   const toggleMenuVisibility = () =>
     setMenuVisible((visibility) => !visibility);
@@ -24,7 +26,7 @@ const Layout = () => {
     <DocsLayout>
       <Topbar />
 
-      <Content>{routing}</Content>
+      <Content ref={contentRef}>{routing}</Content>
 
       <Drawer
         visible={menuVisible}
