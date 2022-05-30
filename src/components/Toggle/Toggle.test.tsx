@@ -1,5 +1,4 @@
 import userEvent from '@testing-library/user-event';
-import { lorem } from 'faker';
 import React from 'react';
 import Toggle from '.';
 import { render, screen, usedTheme } from '../../test-utils/customRender';
@@ -29,15 +28,6 @@ describe('Toggle', () => {
     expect(callback).not.toHaveBeenCalled();
   });
 
-  it('renders given label text when provided', () => {
-    const label = lorem.words(2);
-    render(<Toggle label={label} value={true} onChange={jest.fn()} />);
-
-    const renderedLabel = screen.getByText(label);
-
-    expect(renderedLabel).toBeInTheDocument();
-  });
-
   it('renders a displaced indicator when value is true', () => {
     render(<Toggle value={true} onChange={jest.fn()} />);
 
@@ -51,7 +41,7 @@ describe('Toggle', () => {
 
     const indicator = screen.getByLabelText('toggle-indicator');
 
-    expect(indicator).toHaveStyle('margin-left: calc(100% - 100%);');
+    expect(indicator).toHaveStyle('margin-left: 0.25rem;');
   });
 
   it('renders a gradient with provided color as background', () => {
@@ -127,23 +117,5 @@ describe('Toggle', () => {
     const toggleControl = screen.getByLabelText('toggle');
 
     expect(toggleControl).toHaveStyle('opacity: 0.5');
-  });
-
-  it('adds a margin-right when has a label and labelPosition is left', () => {
-    const label = lorem.word();
-    render(
-      <Toggle
-        value={false}
-        onChange={jest.fn()}
-        label={label}
-        labelPosition="left"
-      />
-    );
-
-    const renderedLabel = screen.getByText(label);
-
-    expect(renderedLabel).toHaveStyle(
-      `margin-right: ${usedTheme.spacing.small}`
-    );
   });
 });

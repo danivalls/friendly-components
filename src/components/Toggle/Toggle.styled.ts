@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 import {
   ToggleBodyProps,
   ToggleContainerProps,
@@ -7,55 +7,59 @@ import {
 
 export const ToggleContainer = styled.label<ToggleContainerProps>`
   display: inline-flex;
-  align-items: center;
-  flex-direction: ${({ labelPosition }): string =>
-    labelPosition === 'left' ? 'row-reverse' : 'row'};
 
   cursor: ${({ disabled }): string => (disabled ? 'not-allowed' : 'pointer')};
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  opacity: 1;
 
-  & > .toggle-body {
-    transform: scale(1);
-    transition: all 0.5s cubic-bezier(0.44, 0.32, 0.37, 1.44);
-  }
+  transition: all 0.3s;
 
   &:active {
-    & > .switch-body {
-      transform: scale(0.9);
+    .toggle-indicator {
+      width: 1.5rem;
+    }
+    input:checked + .toggle-body {
+      .toggle-indicator {
+        margin-left: calc(100% - 1.5rem - 0.25rem);
+      }
     }
   }
 
-  & > .toggle-label {
-    margin-left: ${({ theme, labelPosition }): string =>
-      labelPosition === 'right' ? theme.spacing.small : '0'};
-    margin-right: ${({ theme, labelPosition }): string =>
-      labelPosition === 'left' ? theme.spacing.small : '0'};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.75;
+    }
   }
 `;
+
+const getBodyBgColor = (
+  checked: boolean,
+  keepColor: boolean,
+  bgColor: string,
+  theme: DefaultTheme
+): string => {
+  if (checked) return theme.colors[bgColor] ?? bgColor;
+  if (keepColor) return theme.colors[`${bgColor}Lighter`] ?? bgColor;
+
+  return theme.colors.neutral;
+};
 
 export const ToggleBody = styled.div.attrs(() => ({
   'aria-label': 'toggle',
   className: 'toggle-body'
 }))<ToggleBodyProps>`
-  opacity: ${({ disabled }): number => (disabled ? 0.5 : 1)};
-
   display: inline-flex;
   align-items: center;
-  padding: 0 calc(${({ theme }): string => theme.spacing.tiny} / 2);
-  border-radius: ${({ theme }): string => theme.spacing.base};
-  min-width: calc(${({ theme }): string => theme.spacing.base}*2);
-  height: calc(
-    ${({ theme }): string => theme.spacing.base} +
-      ${({ theme }): string => theme.spacing.tiny}
-  );
+
+  width: 3rem;
+  height: 1.75rem;
+
+  border-radius: 1.75rem;
+  opacity: ${({ disabled }): number => (disabled ? 0.5 : 1)};
 
   background-color: ${({ theme, checked, bgColor, keepColor }): string =>
-    checked
-      ? theme.colors[bgColor] || bgColor
-      : keepColor
-      ? theme.colors[`${bgColor}Lighter`] || bgColor
-      : theme.colors.neutral};
+    getBodyBgColor(checked, keepColor, bgColor, theme)};
   background: radial-gradient(
     circle,
     ${({ theme, bgColor }): string => theme.colors[bgColor] || bgColor} 49.9%,
@@ -72,23 +76,19 @@ export const ToggleBody = styled.div.attrs(() => ({
 `;
 
 export const ToggleIndicator = styled.div.attrs(() => ({
-  'aria-label': 'toggle-indicator'
+  'aria-label': 'toggle-indicator',
+  className: 'toggle-indicator'
 }))<ToggleIndicatorProps>`
-  width: ${({ theme }): string => theme.spacing.base};
-  height: ${({ theme }): string => theme.spacing.base};
-  background-color: white;
-  border-radius: ${({ theme }): string => theme.borderRadius.round};
-  margin-left: calc(
-    100% -
-      ${({ theme, checked }): string => (checked ? theme.spacing.base : '100%')}
-  );
-  transition: all 0.5s cubic-bezier(0.4, 0.4, 0.4, 1.5);
-`;
+  height: 1.25rem;
+  width: 1.25rem;
 
-export const LabelText = styled.span.attrs(() => ({
-  'aria-label': 'toggle-label',
-  className: 'toggle-label'
-}))``;
+  background-color: white;
+  border-radius: 1.25rem;
+  margin-left: ${({ checked }): string =>
+    checked ? 'calc(100% - 1.25rem - 0.25rem)' : '0.25rem'};
+
+  transition: all 0.3s cubic-bezier(0.4, 0.4, 0.4, 1.5);
+`;
 
 export const ToggleControl = styled.input.attrs(() => ({
   type: 'checkbox'

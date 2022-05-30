@@ -21,13 +21,9 @@ import React, { useState } from 'react';
 
 const Disable = () => {
   const [value, setValue] = useState(true);
+  
   return (
-    <Toggle
-      value={value}
-      onChange={setValue}
-      label="This switch is disabled"
-      disabled
-    />
+    <Toggle value={value} onChange={setValue} disabled />
   );
 };
 

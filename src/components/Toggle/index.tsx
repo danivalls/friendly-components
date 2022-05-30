@@ -1,6 +1,5 @@
 import React, { SyntheticEvent } from 'react';
 import {
-  LabelText,
   ToggleBody,
   ToggleContainer,
   ToggleControl,
@@ -12,8 +11,6 @@ const Toggle: React.FC<ToggleProps> = ({
   onChange,
   value,
   color = 'primary',
-  label,
-  labelPosition = 'right',
   disabled = false,
   keepColor = false
 }) => {
@@ -22,7 +19,7 @@ const Toggle: React.FC<ToggleProps> = ({
     onChange(target.checked);
   };
   return (
-    <ToggleContainer labelPosition={labelPosition} disabled={disabled}>
+    <ToggleContainer disabled={disabled}>
       <ToggleControl
         checked={value}
         onChange={handleToggleChange}
@@ -36,7 +33,6 @@ const Toggle: React.FC<ToggleProps> = ({
       >
         <ToggleIndicator checked={value} />
       </ToggleBody>
-      {!!label && <LabelText>{label}</LabelText>}
     </ToggleContainer>
   );
 };

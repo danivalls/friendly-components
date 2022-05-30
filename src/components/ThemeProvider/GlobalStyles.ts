@@ -5,6 +5,10 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins', 'Roboto', sans-serif;
   }
 
+  html {
+    font-size: 16px;
+  }
+
   button,
   textarea,
   input,

@@ -5,7 +5,6 @@ import React from 'react';
 import BasicUsage from './components/BasicUsage';
 import CustomColor from './components/CustomColor';
 import Disable from './components/Disable';
-import WithLabels from './components/WithLabels';
 
 const ToggleDocs = () => {
   return (
@@ -16,9 +15,6 @@ const ToggleDocs = () => {
       </DocExampleRenderer>
       <DocExampleRenderer code={CustomColor.code} title="Custom color">
         <CustomColor />
-      </DocExampleRenderer>
-      <DocExampleRenderer code={WithLabels.code} title="Labels">
-        <WithLabels />
       </DocExampleRenderer>
       <DocExampleRenderer code={Disable.code} title="Disabling control">
         <Disable />

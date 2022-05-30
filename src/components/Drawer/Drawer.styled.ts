@@ -12,8 +12,8 @@ const getPositioning = (
   direction: Direction,
   side: 'left' | 'right' | 'top' | 'bottom'
 ): string => {
-  const axisDirections = X_AXIS.includes(direction) ? X_AXIS : Y_AXIS;
-  const opposite = axisDirections.find((dir) => dir !== direction);
+  const directionsInActiveAxis = X_AXIS.includes(direction) ? X_AXIS : Y_AXIS;
+  const opposite = directionsInActiveAxis.find((dir) => dir !== direction);
 
   return opposite === side ? 'unset' : '0';
 };

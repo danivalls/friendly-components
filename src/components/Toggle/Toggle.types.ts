@@ -4,14 +4,11 @@ export interface ToggleProps {
   onChange: Function;
   value: boolean;
   color?: string;
-  label?: string;
-  labelPosition?: LabelPosition;
   disabled?: boolean;
   keepColor?: boolean;
 }
 
 export interface ToggleContainerProps {
-  labelPosition: LabelPosition;
   disabled: boolean;
 }
 
