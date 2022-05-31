@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import useIsMounted from '../../hooks/useIsMounted';
 import { BaseButton, Ripple } from './Button.styled';
 import { ButtonProps, RippleElement } from './Button.types';
 
@@ -12,14 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   children
 }) => {
   const [ripples, setRipples] = useState<RippleElement[]>([]);
-  const mounted = useRef(false);
-
-  useEffect(() => {
-    mounted.current = true;
-    return (): void => {
-      mounted.current = false;
-    };
-  }, []);
+  const getIsMounted = useIsMounted();
 
   const handleClick = useCallback((e: React.MouseEvent): void => {
     const { clientX, clientY } = e;
@@ -31,10 +25,10 @@ const Button: React.FC<ButtonProps> = ({
 
     onClick?.();
 
-    const ripple = { x, y, key: Date.now() };
+    const ripple: RippleElement = { x, y, key: Date.now() };
 
     const clearRipple = (): void => {
-      if (mounted.current) {
+      if (getIsMounted()) {
         setRipples((state) => state.filter((element) => element != ripple));
       }
     };
