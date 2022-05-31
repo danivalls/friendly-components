@@ -62,8 +62,6 @@ const getDrawerTransformation = ({
       return 'translateY(-100%)';
     case 'bottom':
       return 'translateY(100%)';
-    default:
-      return 'translate(0, 0)';
   }
 };
 

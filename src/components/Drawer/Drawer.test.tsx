@@ -138,4 +138,36 @@ describe('Drawer', () => {
       `border-top-left-radius: ${usedTheme.borderRadius.large}`
     );
   });
+
+  it('moves the drawer body in the correct direction when placement is right', () => {
+    renderDrawer({ placement: 'right', visible: false });
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).toHaveStyle('transform: translateX(100%);');
+  });
+
+  it('moves the drawer body in the correct direction when placement is left', () => {
+    renderDrawer({ placement: 'left', visible: false });
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).toHaveStyle('transform: translateX(-100%);');
+  });
+
+  it('moves the drawer body in the correct direction when placement is top', () => {
+    renderDrawer({ placement: 'top', visible: false });
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).toHaveStyle('transform: translateY(-100%);');
+  });
+
+  it('moves the drawer body in the correct direction when placement is bottom', () => {
+    renderDrawer({ placement: 'bottom', visible: false });
+
+    const aside = screen.getByRole('complementary');
+
+    expect(aside).toHaveStyle('transform: translateY(100%);');
+  });
 });
