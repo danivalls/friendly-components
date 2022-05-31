@@ -1,51 +1,41 @@
 import styled, { DefaultTheme, keyframes } from 'styled-components';
 import { BaseButtonProps, RippleProps } from './Button.types';
 
-const generatePadding = ({ theme }: { theme: DefaultTheme }): string => {
-  const { small, tiny } = theme.spacing;
-
-  return `${tiny} ${small}`;
-};
-
 const getColorFromTheme = (props: {
   theme: DefaultTheme;
   colorType: string;
 }): string => {
   const { theme, colorType } = props;
 
-  if (colorType && theme.colors[colorType]) return theme.colors[colorType];
-
-  return colorType;
+  return theme.colors[colorType] || colorType;
 };
 
-const generateBackgroundColor = (props: {
+const getBackgroundColor = (props: {
   theme: DefaultTheme;
   colorType: string;
   styleType: string;
 }): string => {
-  if (props.styleType === 'outlined') return 'transparent';
-  return getColorFromTheme(props);
+  return props.styleType === 'outlined'
+    ? 'transparent'
+    : getColorFromTheme(props);
 };
 
-const generateTextColor = (props: {
+const getTextColor = (props: {
   theme: DefaultTheme;
   colorType: string;
   styleType: string;
 }): string => {
-  if (props.styleType === 'outlined') return getColorFromTheme(props);
-
-  return 'white';
+  return props.styleType === 'outlined' ? getColorFromTheme(props) : 'white';
 };
 
-const generateOutlineShadow = (props: {
+const getOutlineShadow = (props: {
   theme: DefaultTheme;
   colorType: string;
   styleType: string;
 }): string => {
-  if (props.styleType === 'outlined')
-    return `inset 0px 0px 0px 2px ${getColorFromTheme(props)};`;
-
-  return 'none';
+  return props.styleType === 'outlined'
+    ? `inset 0px 0px 0px 2px ${getColorFromTheme(props)};`
+    : 'none';
 };
 
 export const BaseButton = styled.button<BaseButtonProps>`
@@ -53,12 +43,12 @@ export const BaseButton = styled.button<BaseButtonProps>`
   position: relative;
   overflow: hidden;
   outline: none;
-  padding: ${generatePadding};
+  padding: 0.5rem 0.75rem;
   border-radius: ${({ theme }): string => theme.borderRadius.base};
   cursor: pointer;
-  background-color: ${generateBackgroundColor};
-  color: ${generateTextColor};
-  box-shadow: ${generateOutlineShadow};
+  background-color: ${getBackgroundColor};
+  color: ${getTextColor};
+  box-shadow: ${getOutlineShadow};
 `;
 
 const rippleAnimation = keyframes`

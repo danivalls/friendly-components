@@ -47,11 +47,24 @@ const getBorderRadiusStyles = (
   `;
 };
 
-const TRANSFORMING = {
-  left: 'translateX(-100%)',
-  right: 'translateX(100%)',
-  top: 'translateY(-100%)',
-  bottom: 'translateY(100%)'
+const getDrawerTransformation = ({
+  visible,
+  placement
+}: DrawerBodyProps): string => {
+  if (visible) return 'translate(0, 0)';
+
+  switch (placement) {
+    case 'left':
+      return 'translateX(-100%)';
+    case 'right':
+      return 'translateX(100%)';
+    case 'top':
+      return 'translateY(-100%)';
+    case 'bottom':
+      return 'translateY(100%)';
+    default:
+      return 'translate(0, 0)';
+  }
 };
 
 export const DrawerBody = styled.aside<DrawerBodyProps>`
@@ -78,8 +91,7 @@ export const DrawerBody = styled.aside<DrawerBodyProps>`
   ${({ rounded, theme, placement }): FlattenSimpleInterpolation =>
     getBorderRadiusStyles(rounded, theme, placement)}
 
-  transform: ${({ visible, placement }): string =>
-    visible ? 'translate(0, 0)' : TRANSFORMING[placement]};
+  transform: ${getDrawerTransformation};
 
   transition: all 0.3s;
 `;

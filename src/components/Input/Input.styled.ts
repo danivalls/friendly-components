@@ -48,6 +48,12 @@ export const InputBody = styled.input`
   }
 `;
 
+const getIconShadow = ({ elevated }: IconContainerProps): string => {
+  return elevated
+    ? '10px 10px 20px 0px rgba(0,0,0,0.075), 10px 10px 10px -10px rgba(0,0,0,0.128)'
+    : '0 0 0 0 transparent';
+};
+
 export const IconContainer = styled.div.attrs(() => ({
   'aria-label': 'icon-container'
 }))<IconContainerProps>`
@@ -57,16 +63,13 @@ export const IconContainer = styled.div.attrs(() => ({
   align-items: center;
   justify-content: center;
 
-  height: calc(${({ theme }): string => theme.spacing.medium} + 6px);
-  width: calc(${({ theme }): string => theme.spacing.medium} + 6px);
+  height: calc(2rem + 6px);
+  width: calc(2rem + 6px);
 
   border-radius: ${({ theme }): string => theme.borderRadius.base};
   background-color: ${({ theme, elevated }): string =>
     elevated ? theme.colors.neutralLighter : theme.colors.neutralLight};
-  box-shadow: ${({ elevated }): string =>
-    elevated
-      ? '10px 10px 20px 0px rgba(0,0,0,0.075), 10px 10px 10px -10px rgba(0,0,0,0.128)'
-      : '0 0 0 0 transparent'};
+  box-shadow: ${getIconShadow};
 
   transform: translate(
     ${({ elevated }): string => (elevated ? '-25%, -25%' : '0, 0')}
