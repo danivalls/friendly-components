@@ -4,6 +4,7 @@ import DrawerDocs from 'features/DrawerDocs';
 import Home from 'features/HomePage';
 import InputDocs from 'features/InputDocs';
 import GettingStarted from 'features/Installation';
+import TableDocs from 'features/TableDocs';
 import React from 'react';
 import IconDocs from '../features/IconDocs';
 import ToggleDocs from '../features/ToggleDocs';
@@ -43,6 +44,12 @@ export const docsRoutes = [
     label: 'Input',
     path: 'input',
     element: <InputDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Table',
+    path: 'table',
+    element: <TableDocs />,
     category: 'Components'
   }
 ];

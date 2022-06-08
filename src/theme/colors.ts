@@ -25,17 +25,29 @@ const generateColors = (baseColors: BaseColors = {}): ColorsType => {
   const initialColors = { ...DEFAULT_COLORS, ...providedColors };
   const generatedColors = Object.entries(initialColors).reduce(
     (colors, [colorName, colorCode]) => {
-      const colorWithVariants = {
-        [`${colorName}Lightest`]: whitenColor(colorCode, 90),
-        [`${colorName}Lighter`]: whitenColor(colorCode, 50),
+      const firstLevel = {
         [`${colorName}Light`]: whitenColor(colorCode, 30),
-        [colorName]: colorCode,
-        [`${colorName}Dark`]: blackenColor(colorCode, 10),
-        [`${colorName}Darker`]: blackenColor(colorCode, 30),
+        [`${colorName}Dark`]: blackenColor(colorCode, 10)
+      };
+      const secondLevel = {
+        [`${colorName}Lighter`]: whitenColor(colorCode, 50),
+        [`${colorName}Darker`]: blackenColor(colorCode, 30)
+      };
+      const thirdLevel = {
+        [`${colorName}Lightest`]: whitenColor(
+          secondLevel[`${colorName}Lighter`],
+          50
+        ),
         [`${colorName}Darkest`]: blackenColor(colorCode, 50)
       };
 
-      return { ...colors, ...colorWithVariants };
+      return {
+        ...colors,
+        [colorName]: colorCode,
+        ...firstLevel,
+        ...secondLevel,
+        ...thirdLevel
+      };
     },
     {}
   ) as ColorsType;
