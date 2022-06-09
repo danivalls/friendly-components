@@ -4,6 +4,7 @@ import {
   ButtonsContainer,
   GetStartedButton,
   HomeLayout,
+  Logo,
   MainContent,
   Subtitle,
   Title
@@ -13,6 +14,7 @@ const Home = () => {
   return (
     <HomeLayout>
       <MainContent className="main-content">
+        <Logo />
         <Title>FriendlyComponents</Title>
         <Subtitle>A components library for React</Subtitle>
         <ButtonsContainer>

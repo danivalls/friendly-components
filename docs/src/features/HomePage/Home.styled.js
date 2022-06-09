@@ -11,18 +11,35 @@ export const HomeLayout = styled.div`
   background-image: radial-gradient(
     circle 110vh at 47.1% 1.5%,
     white 60%,
-    rgba(0, 0, 0, 0.25) 100%
+    rgba(0, 0, 0, 0.15) 100%
   );
 `;
 
+export const Logo = styled.img.attrs(() => ({
+  src: 'fc-logo.svg',
+  alt: 'FriendlyComponents Logo'
+}))`
+  width: 5rem;
+
+  @media (min-width: 900px) {
+    width: 10rem;
+    grid-row: 1 / 4;
+    margin-right: 1rem;
+  }
+`;
+
 export const MainContent = styled.div`
-  display: flex;
-  flex-flow: column;
+  display: grid;
   color: ${({ theme }) => theme.colors.text};
   transition: 0.25s;
-  padding: ${({ theme }) => theme.spacing.large};
   transform: scale(1);
   transition: 0.3s cubic-bezier(0.23, 1.05, 0.65, 1.44);
+
+  @media (min-width: 900px) {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content auto;
+    padding: ${({ theme }) => theme.spacing.large};
+  }
 `;
 
 export const Title = styled.h1`

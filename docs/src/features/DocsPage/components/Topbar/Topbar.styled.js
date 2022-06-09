@@ -15,9 +15,19 @@ export const Container = styled.div`
   }
 `;
 
+export const FCLogo = styled.img.attrs(() => ({
+  src: 'fc-logo.svg',
+  alt: 'FriendlyComponents Logo'
+}))`
+  width: 2.5rem;
+  margin-right: ${({ theme }) => theme.spacing.small};
+`;
+
 export const Title = styled(Link).attrs(() => ({
   to: '/'
 }))`
+  display: flex;
+  align-items: center;
   font-size: ${({ theme }) => theme.fontSize.large};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   text-decoration: none;
