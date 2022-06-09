@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/friendly-components/static/css/main.3fe8223f.chunk.css",
-    "main.js": "/friendly-components/static/js/main.91a0934a.chunk.js",
-    "main.js.map": "/friendly-components/static/js/main.91a0934a.chunk.js.map",
+    "main.js": "/friendly-components/static/js/main.e006a706.chunk.js",
+    "main.js.map": "/friendly-components/static/js/main.e006a706.chunk.js.map",
     "runtime-main.js": "/friendly-components/static/js/runtime-main.376e5fc9.js",
     "runtime-main.js.map": "/friendly-components/static/js/runtime-main.376e5fc9.js.map",
     "static/js/2.d9658cad.chunk.js": "/friendly-components/static/js/2.d9658cad.chunk.js",
     "static/js/2.d9658cad.chunk.js.map": "/friendly-components/static/js/2.d9658cad.chunk.js.map",
     "index.html": "/friendly-components/index.html",
-    "precache-manifest.35d3eed848921a928d7332916bad2c42.js": "/friendly-components/precache-manifest.35d3eed848921a928d7332916bad2c42.js",
+    "precache-manifest.c1059b672421b248d15e540f5a56f6a9.js": "/friendly-components/precache-manifest.c1059b672421b248d15e540f5a56f6a9.js",
     "service-worker.js": "/friendly-components/service-worker.js",
     "static/css/main.3fe8223f.chunk.css.map": "/friendly-components/static/css/main.3fe8223f.chunk.css.map",
     "static/js/2.d9658cad.chunk.js.LICENSE.txt": "/friendly-components/static/js/2.d9658cad.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.376e5fc9.js",
     "static/js/2.d9658cad.chunk.js",
     "static/css/main.3fe8223f.chunk.css",
-    "static/js/main.91a0934a.chunk.js"
+    "static/js/main.e006a706.chunk.js"
   ]
 }
