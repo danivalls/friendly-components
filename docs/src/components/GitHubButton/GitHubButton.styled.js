@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import GithubLogoSVG from './GitHubLogo.svg';
 
 export const GHLink = styled.a`
   position: relative;
@@ -49,5 +50,17 @@ export const GHLink = styled.a`
   & > * {
     z-index: 1;
     transition: 0.2s ease-out;
+  }
+`;
+
+export const GHLogo = styled.img.attrs(() => ({
+  src: GithubLogoSVG,
+  alt: 'GitHub'
+}))`
+  width: 1.5rem;
+  padding: 0.8rem;
+
+  &:hover {
+    padding: 0.7rem;
   }
 `;
