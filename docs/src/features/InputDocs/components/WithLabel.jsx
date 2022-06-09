@@ -33,7 +33,7 @@ const WithLabel = () => {
 
 export default WithLabel;
 
-WithLabel.code = `
+export const withLabelCode = `
 import { Input } from 'friendly-components';
 import React, { useState } from 'react';
 

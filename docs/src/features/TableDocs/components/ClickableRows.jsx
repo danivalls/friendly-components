@@ -30,7 +30,7 @@ const ClickableRows = () => {
 
 export default ClickableRows;
 
-ClickableRows.code = `
+export const clickableRowsCode = `
 import { Table } from 'friendly-components';
 import React from 'react';
 

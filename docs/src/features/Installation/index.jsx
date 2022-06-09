@@ -1,6 +1,6 @@
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
-import JSXCode from 'components/JSXCode';
+import JSXCodeViewer from 'components/JSXCodeViewer';
 import React from 'react';
 import { addingThemeProvider, installationCommand } from './codeExamples';
 import { Paragraph } from './Installation.styled';
@@ -13,7 +13,7 @@ const Installation = () => {
         To start using FriendlyComponents in your React project, just install it
         as dependency using the following command:
       </Paragraph>
-      <JSXCode code={installationCommand} />
+      <JSXCodeViewer code={installationCommand} />
 
       <DocSectionTitle>Set up</DocSectionTitle>
       <Paragraph>
@@ -27,7 +27,7 @@ const Installation = () => {
         Here you have an example adding the ThemeProvider to a generic{' '}
         <code>app.js</code>:
       </Paragraph>
-      <JSXCode code={addingThemeProvider} />
+      <JSXCodeViewer code={addingThemeProvider} />
     </DocTemplate>
   );
 };

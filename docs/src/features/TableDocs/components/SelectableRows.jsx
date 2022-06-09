@@ -37,7 +37,7 @@ const SelectableRows = () => {
 
 export default SelectableRows;
 
-SelectableRows.code = `
+export const selectableRowsCode = `
 import { Table } from 'friendly-components';
 import React, { useState } from 'react';
 

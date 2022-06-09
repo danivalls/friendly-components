@@ -24,7 +24,7 @@ const Outlined = () => {
 
 export default Outlined;
 
-Outlined.code = `
+export const outlinedCode = `
 import { Button } from 'friendly-components';
 import React from 'react';
 

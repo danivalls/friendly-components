@@ -2,30 +2,39 @@ import DocExampleRenderer from 'components/DocExampleRenderer';
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
 import React from 'react';
-import BasicUsage from './components/BasicUsage';
-import CustomSize from './components/CustomSize';
-import Positioning from './components/Positioning';
-import Rounded from './components/Rounded';
+import BasicUsage, { basicUsageCode } from './components/BasicUsage';
+import CustomSize, { customSizeCode } from './components/CustomSize';
+import Positioning, { positioningCode } from './components/Positioning';
+import Rounded, { roundedCode } from './components/Rounded';
 
 const DrawerDocs = () => {
   return (
     <DocTemplate title="Drawer">
       <DocSectionTitle>Usage</DocSectionTitle>
-      <DocExampleRenderer title="Basic" code={BasicUsage.code}>
-        <BasicUsage />
-      </DocExampleRenderer>
 
-      <DocExampleRenderer title="Positioning" code={Positioning.code}>
-        <Positioning />
-      </DocExampleRenderer>
+      <DocExampleRenderer
+        title="Basic Usage"
+        code={basicUsageCode}
+        content={<BasicUsage />}
+      />
 
-      <DocExampleRenderer title="Rounded edges" code={Rounded.code}>
-        <Rounded />
-      </DocExampleRenderer>
+      <DocExampleRenderer
+        title="Positioning"
+        code={positioningCode}
+        content={<Positioning />}
+      />
 
-      <DocExampleRenderer title="Custom size" code={CustomSize.code}>
-        <CustomSize />
-      </DocExampleRenderer>
+      <DocExampleRenderer
+        title="Rounded edges"
+        code={roundedCode}
+        content={<Rounded />}
+      />
+
+      <DocExampleRenderer
+        title="Custom size"
+        code={customSizeCode}
+        content={<CustomSize />}
+      />
     </DocTemplate>
   );
 };

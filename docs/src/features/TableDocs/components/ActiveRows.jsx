@@ -20,7 +20,7 @@ const ActiveRows = () => {
 
 export default ActiveRows;
 
-ActiveRows.code = `
+export const activeRowsCode = `
 import { Table } from 'friendly-components';
 import React from 'react';
 

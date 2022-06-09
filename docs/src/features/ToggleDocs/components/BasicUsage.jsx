@@ -26,7 +26,7 @@ const BasicUsage = () => {
 
 export default BasicUsage;
 
-BasicUsage.code = `
+export const basicUsageCode = `
 import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 import { Showcase } from './Showcase';

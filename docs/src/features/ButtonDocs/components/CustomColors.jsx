@@ -15,7 +15,7 @@ const CustomColors = () => {
 
 export default CustomColors;
 
-CustomColors.code = `
+export const customColorsCode = `
 import { Button } from 'friendly-components';
 import React from 'react';
 import Showcase from './Showcase';

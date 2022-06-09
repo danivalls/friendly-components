@@ -45,7 +45,7 @@ const ContentEnrichment = () => {
 
 export default ContentEnrichment;
 
-ContentEnrichment.code = `
+export const contentEnrichmentCode = `
 import { Icon, Table } from 'friendly-components';
 import React from 'react';
 

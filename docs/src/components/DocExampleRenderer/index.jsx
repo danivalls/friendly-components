@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import JSXCode from '../JSXCode';
+import JSXCodeViewer from '../JSXCodeViewer';
 import { ComponentFrame, Container, Title } from './DocExampleRenderer.styled';
 
-const DocExampleRenderer = ({ title, code, children }) => {
+const DocExampleRenderer = ({ title, code, content }) => {
   return (
     <Container>
       <Title>{title}</Title>
-      <ComponentFrame>{children}</ComponentFrame>
-      <JSXCode code={code} />
+      <ComponentFrame>{content}</ComponentFrame>
+      <JSXCodeViewer code={code} />
     </Container>
   );
 };
@@ -18,5 +18,5 @@ export default DocExampleRenderer;
 DocExampleRenderer.propTypes = {
   title: PropTypes.string.isRequired,
   code: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  content: PropTypes.node.isRequired
 };

@@ -19,7 +19,7 @@ const CustomSize = () => {
 
 export default CustomSize;
 
-CustomSize.code = `
+export const customSizeCode = `
 import { Button, Drawer } from 'friendly-components';
 import React, { useState } from 'react';
 

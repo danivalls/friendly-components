@@ -19,7 +19,7 @@ const Rounded = () => {
 
 export default Rounded;
 
-Rounded.code = `
+export const roundedCode = `
 import { Button, Drawer } from 'friendly-components';
 import React, { useState } from 'react';
 
