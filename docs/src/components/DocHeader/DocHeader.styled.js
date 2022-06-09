@@ -18,6 +18,11 @@ export const Title = styled.h1`
   line-height: ${({ theme }) => theme.lineHeight.title3};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.colors.text};
+
+  @media (min-width: 900px) {
+    font-size: ${({ theme }) => theme.fontSize.title1};
+    line-height: ${({ theme }) => theme.lineHeight.title1};
+  }
 `;
 
 export const Description = styled.p`
