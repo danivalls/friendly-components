@@ -16,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const FCLogo = styled.img.attrs(() => ({
-  src: 'fc-logo.svg',
+  src: '/friendly-components/fc-logo.svg',
   alt: 'FriendlyComponents Logo'
 }))`
   width: 2.5rem;

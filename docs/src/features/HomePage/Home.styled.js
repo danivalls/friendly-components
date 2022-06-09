@@ -16,7 +16,7 @@ export const HomeLayout = styled.div`
 `;
 
 export const Logo = styled.img.attrs(() => ({
-  src: 'fc-logo.svg',
+  src: '/friendly-components/fc-logo.svg',
   alt: 'FriendlyComponents Logo'
 }))`
   width: 5rem;
