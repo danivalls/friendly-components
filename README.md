@@ -18,6 +18,10 @@ or
 yarn add friendly-components
 ```
 
+## Docs
+
+Find detailed documentation of each component at [friendly-components doc page](https://danivalls.github.io/friendly-components/)
+
 ## License
 
 MIT © [danivalls](https://github.com/danivalls)
