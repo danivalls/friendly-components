@@ -20,7 +20,7 @@ const CustomColor = () => {
 
 export default CustomColor;
 
-CustomColor.code = `
+export const customColorCode = `
 import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 import { Showcase } from './Showcase';

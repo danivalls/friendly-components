@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { Highlighter } from './JSXCode.style';
+import { Highlighter } from './JSXCodeViewer.style';
 
-const JSXCode = ({ code }) => {
+const JSXCodeViewer = ({ code }) => {
   return <Highlighter style={atomOneDarkReasonable}>{code.trim()}</Highlighter>;
 };
 
-export default JSXCode;
+export default JSXCodeViewer;
 
-JSXCode.propTypes = {
+JSXCodeViewer.propTypes = {
   code: PropTypes.string.isRequired
 };

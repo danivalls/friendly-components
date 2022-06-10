@@ -20,7 +20,7 @@ const InconsistentData = () => {
 
 export default InconsistentData;
 
-InconsistentData.code = `
+export const inconsistentDataCode = `
 import { Table } from 'friendly-components';
 import React from 'react';
 

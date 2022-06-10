@@ -15,7 +15,7 @@ const Disable = () => {
 
 export default Disable;
 
-Disable.code = `
+export const disableCode = `
 import { Toggle } from 'friendly-components';
 import React, { useState } from 'react';
 

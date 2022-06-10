@@ -37,7 +37,7 @@ const Positioning = () => {
 
 export default Positioning;
 
-Positioning.code = `
+export const positioningCode = `
 import { Button, Drawer } from 'friendly-components';
 import React, { useState } from 'react';
 

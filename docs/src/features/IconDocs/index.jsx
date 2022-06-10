@@ -4,7 +4,7 @@ import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
 import React from 'react';
 import IconsList from './components/IconsList';
-import UsageExample from './components/UsageExample';
+import UsageExample, { usageExampleCode } from './components/UsageExample';
 
 const IconDocs = () => {
   return (
@@ -22,10 +22,13 @@ const IconDocs = () => {
       }
     >
       <DocSectionTitle>Usage</DocSectionTitle>
-      <DocExampleRenderer title="Using an icon" code={UsageExample.code}>
-        <UsageExample />
-      </DocExampleRenderer>
-      <DocSectionTitle>List of icons</DocSectionTitle>
+      <DocExampleRenderer
+        title="Using an icon"
+        code={usageExampleCode}
+        content={<UsageExample />}
+      />
+
+      <DocSectionTitle>Available icons</DocSectionTitle>
       <IconsList />
     </DocTemplate>
   );

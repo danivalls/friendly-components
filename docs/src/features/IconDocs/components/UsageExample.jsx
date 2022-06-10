@@ -7,7 +7,7 @@ const UsageExample = () => {
 
 export default UsageExample;
 
-UsageExample.code = `
+export const usageExampleCode = `
 import { Icon } from 'friendly-components';
 import React from 'react';
 

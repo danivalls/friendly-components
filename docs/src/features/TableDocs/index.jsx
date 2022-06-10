@@ -2,46 +2,59 @@ import DocExampleRenderer from 'components/DocExampleRenderer';
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
 import React from 'react';
-import ActiveRows from './components/ActiveRows';
-import BasicUsage from './components/BasicUsage';
-import ClickableRows from './components/ClickableRows';
-import ContentEnrichment from './components/ContentEnrichment';
-import InconsistentData from './components/InconsistentData';
-import SelectableRows from './components/SelectableRows';
+import ActiveRows, { activeRowsCode } from './components/ActiveRows';
+import BasicUsage, { basicUsageCode } from './components/BasicUsage';
+import ClickableRows, { clickableRowsCode } from './components/ClickableRows';
+import ContentEnrichment, {
+  contentEnrichmentCode
+} from './components/ContentEnrichment';
+import InconsistentData, {
+  inconsistentDataCode
+} from './components/InconsistentData';
+import SelectableRows, {
+  selectableRowsCode
+} from './components/SelectableRows';
 
 const TableDocs = () => {
   return (
     <DocTemplate title="Table">
       <DocSectionTitle>Usage</DocSectionTitle>
-      <DocExampleRenderer title="Basic Usage" code={BasicUsage.code}>
-        <BasicUsage />
-      </DocExampleRenderer>
+
+      <DocExampleRenderer
+        title="Basic Usage"
+        code={basicUsageCode}
+        content={<BasicUsage />}
+      />
 
       <DocExampleRenderer
         title="Content Enrichment"
-        code={ContentEnrichment.code}
-      >
-        <ContentEnrichment />
-      </DocExampleRenderer>
+        code={contentEnrichmentCode}
+        content={<ContentEnrichment />}
+      />
 
-      <DocExampleRenderer title="Clickable Rows" code={ClickableRows.code}>
-        <ClickableRows />
-      </DocExampleRenderer>
+      <DocExampleRenderer
+        title="Clickable Rows"
+        code={clickableRowsCode}
+        content={<ClickableRows />}
+      />
 
-      <DocExampleRenderer title="Active Rows" code={ActiveRows.code}>
-        <ActiveRows />
-      </DocExampleRenderer>
+      <DocExampleRenderer
+        title="Active Rows"
+        code={activeRowsCode}
+        content={<ActiveRows />}
+      />
 
-      <DocExampleRenderer title="Selectable Rows" code={SelectableRows.code}>
-        <SelectableRows />
-      </DocExampleRenderer>
+      <DocExampleRenderer
+        title="Selectable Rows"
+        code={selectableRowsCode}
+        content={<SelectableRows />}
+      />
 
       <DocExampleRenderer
         title="Dealing with inconsistent data"
-        code={InconsistentData.code}
-      >
-        <InconsistentData />
-      </DocExampleRenderer>
+        code={inconsistentDataCode}
+        content={<InconsistentData />}
+      />
     </DocTemplate>
   );
 };

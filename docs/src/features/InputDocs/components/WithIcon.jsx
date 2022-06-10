@@ -18,7 +18,7 @@ const WithIcon = () => {
 
 export default WithIcon;
 
-WithIcon.code = `
+export const withIconCode = `
 import { Input } from 'friendly-components';
 import React, { useState } from 'react';
 

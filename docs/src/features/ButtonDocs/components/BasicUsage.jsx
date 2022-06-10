@@ -16,7 +16,7 @@ const BasicUsage = () => {
 
 export default BasicUsage;
 
-BasicUsage.code = `
+export const basicUsageCode = `
 import { Button } from 'friendly-components';
 import React from 'react';
 

@@ -19,7 +19,7 @@ const BasicUsage = () => {
 
 export default BasicUsage;
 
-BasicUsage.code = `
+export const basicUsageCode = `
 import { Button, Drawer } from 'friendly-components';
 import React, { useState } from 'react';
 

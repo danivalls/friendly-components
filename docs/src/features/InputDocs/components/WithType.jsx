@@ -68,7 +68,7 @@ const WithType = () => {
 
 export default WithType;
 
-WithType.code = `
+export const withTypeCode = `
 import { Input } from 'friendly-components';
 import React, { useState } from 'react';
 
