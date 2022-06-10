@@ -5,7 +5,7 @@ export const DocsLayout = styled.div`
   grid-template-areas: 'topbar' 'content';
   grid-template-rows: min-content auto;
 
-  height: 100vh;
+  height: 100%;
 
   @media (min-width: 900px) {
     grid-template-areas: 'topbar topbar' 'menu content';

@@ -5,7 +5,7 @@ export const HomeLayout = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   z-index: 0;
   background-color: white;
   background-image: radial-gradient(
