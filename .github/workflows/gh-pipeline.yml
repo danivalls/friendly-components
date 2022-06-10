@@ -33,4 +33,4 @@ jobs:
       - name: Predeploy
         run: yarn predeploy
       - name: Deploy GitHub Page
-        run: yan deploy
+        run: yarn deploy
