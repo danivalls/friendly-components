@@ -30,7 +30,3 @@ jobs:
         run: yarn build
       - name: Run tests
         run: yarn test
-      - name: Predeploy
-        run: yarn predeploy
-      - name: Deploy GitHub Page
-        run: yarn deploy
