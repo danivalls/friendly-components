@@ -1,11 +1,13 @@
 import DocExampleRenderer from 'components/DocExampleRenderer';
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
+import PropsTable from 'components/PropsTable';
 import React from 'react';
 import BasicUsage, { basicUsageCode } from './components/BasicUsage';
 import WithIcon, { withIconCode } from './components/WithIcon';
 import WithLabel, { withLabelCode } from './components/WithLabel';
 import WithType, { withTypeCode } from './components/WithType';
+import props from './inputProps';
 
 const InputDocs = () => {
   return (
@@ -31,6 +33,9 @@ const InputDocs = () => {
         code={withTypeCode}
         content={<WithType />}
       />
+
+      <DocSectionTitle>API</DocSectionTitle>
+      <PropsTable title="Props" props={props} />
     </DocTemplate>
   );
 };
