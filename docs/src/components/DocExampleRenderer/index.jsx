@@ -1,15 +1,16 @@
+import SectionContainer from 'components/SectionContainer';
 import PropTypes from 'prop-types';
 import React from 'react';
 import JSXCodeViewer from '../JSXCodeViewer';
-import { ComponentFrame, Container, Title } from './DocExampleRenderer.styled';
+import { ComponentFrame, Title } from './DocExampleRenderer.styled';
 
 const DocExampleRenderer = ({ title, code, content }) => {
   return (
-    <Container>
+    <SectionContainer>
       <Title>{title}</Title>
       <ComponentFrame>{content}</ComponentFrame>
       <JSXCodeViewer code={code} />
-    </Container>
+    </SectionContainer>
   );
 };
 
