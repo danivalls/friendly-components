@@ -2,7 +2,12 @@ import SectionContainer from 'components/SectionContainer';
 import { Table } from 'friendly-components';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Code, RequiredPropIcon, Title } from './PropsTable.styled';
+import {
+  Code,
+  RequiredPropIcon,
+  TableContainer,
+  Title
+} from './PropsTable.styled';
 
 const columns = [
   {
@@ -28,20 +33,23 @@ const columns = [
   }
 ];
 
-const PropsTable = ({ props }) => {
+const PropsTable = ({ title, props }) => {
   return (
     <SectionContainer>
-      <Title>Props</Title>
-      <Table
-        columns={columns}
-        dataSource={props.map((prop) => ({
-          prop: <Code>{prop.name}</Code>,
-          type: <Code>{prop.type}</Code>,
-          description: prop.description,
-          default: <Code>{prop.default}</Code>,
-          required: <RequiredPropIcon required={props.required} />
-        }))}
-      />
+      <Title>{title}</Title>
+      <TableContainer>
+        <Table
+          columns={columns}
+          dataSource={props.map((prop) => ({
+            key: prop.name,
+            prop: <Code>{prop.name}</Code>,
+            type: <Code>{prop.type}</Code>,
+            description: prop.description,
+            default: <Code>{prop.default}</Code>,
+            required: <RequiredPropIcon required={prop.required} />
+          }))}
+        />
+      </TableContainer>
     </SectionContainer>
   );
 };
@@ -49,6 +57,7 @@ const PropsTable = ({ props }) => {
 export default PropsTable;
 
 PropsTable.propTypes = {
+  title: PropTypes.string.isRequired,
   props: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

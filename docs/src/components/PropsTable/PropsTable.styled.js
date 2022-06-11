@@ -6,6 +6,7 @@ export const Title = styled.h2`
   line-height: ${({ theme }) => theme.lineHeight.large};
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   color: ${({ theme }) => theme.colors.textLight};
+  margin-top: 0;
 `;
 
 export const RequiredPropIcon = styled(Icon).attrs(({ theme, required }) => ({
@@ -16,4 +17,8 @@ export const RequiredPropIcon = styled(Icon).attrs(({ theme, required }) => ({
 
 export const Code = styled.code`
   background-color: ${({ theme }) => theme.colors.neutralLight};
+`;
+
+export const TableContainer = styled.div`
+  overflow-x: auto;
 `;

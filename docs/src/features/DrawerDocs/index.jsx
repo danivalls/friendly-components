@@ -1,11 +1,13 @@
 import DocExampleRenderer from 'components/DocExampleRenderer';
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
+import PropsTable from 'components/PropsTable';
 import React from 'react';
 import BasicUsage, { basicUsageCode } from './components/BasicUsage';
 import CustomSize, { customSizeCode } from './components/CustomSize';
 import Positioning, { positioningCode } from './components/Positioning';
 import Rounded, { roundedCode } from './components/Rounded';
+import props from './drawerProps';
 
 const DrawerDocs = () => {
   return (
@@ -35,6 +37,9 @@ const DrawerDocs = () => {
         code={customSizeCode}
         content={<CustomSize />}
       />
+
+      <DocSectionTitle>API</DocSectionTitle>
+      <PropsTable title="Props" props={props} />
     </DocTemplate>
   );
 };
