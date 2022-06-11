@@ -2,9 +2,11 @@ import DocExampleRenderer from 'components/DocExampleRenderer';
 import DocSectionContent from 'components/DocSectionContent';
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
+import PropsTable from 'components/PropsTable';
 import React from 'react';
 import IconsList from './components/IconsList';
 import UsageExample, { usageExampleCode } from './components/UsageExample';
+import props from './iconProps';
 
 const IconDocs = () => {
   return (
@@ -27,6 +29,9 @@ const IconDocs = () => {
         code={usageExampleCode}
         content={<UsageExample />}
       />
+
+      <DocSectionTitle>API</DocSectionTitle>
+      <PropsTable title="Props" props={props} />
 
       <DocSectionTitle>Available icons</DocSectionTitle>
       <IconsList />
