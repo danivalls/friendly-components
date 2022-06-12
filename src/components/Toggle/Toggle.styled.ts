@@ -28,7 +28,7 @@ export const ToggleContainer = styled.label<ToggleContainerProps>`
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      opacity: 0.75;
+      opacity: 0.8;
     }
   }
 `;

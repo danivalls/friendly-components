@@ -7,7 +7,7 @@ export const DEFAULT_COLORS = {
   error: '#FF2442',
   warning: '#FFB830',
   success: '#44C93A',
-  neutral: '#edf0f0',
+  neutral: '#eaebeb',
   text: '#202124'
 };
 
