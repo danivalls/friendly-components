@@ -7,22 +7,24 @@ import MenuItem from './MenuItem';
 const Menu = () => {
   const location = useLocation();
 
-  const itemsSortedByCategory = docsRoutes.reduce((mappedCategories, item) => {
-    const { category, label, path } = item;
-    const active = path
-      ? location.pathname.split('/').pop() === path
-      : location.pathname === '/docs';
-    const menuItem = { label, path, active };
+  const itemsSortedByCategory = docsRoutes
+    .filter(({ label }) => label)
+    .reduce((mappedCategories, item) => {
+      const { category, label, path } = item;
+      const active = path
+        ? location.pathname.split('/').pop() === path
+        : location.pathname === '/docs';
+      const menuItem = { label, path, active };
 
-    if (mappedCategories[category]) {
-      return {
-        ...mappedCategories,
-        [category]: [...mappedCategories[category], menuItem]
-      };
-    }
+      if (mappedCategories[category]) {
+        return {
+          ...mappedCategories,
+          [category]: [...mappedCategories[category], menuItem]
+        };
+      }
 
-    return { ...mappedCategories, [category]: [menuItem] };
-  }, {});
+      return { ...mappedCategories, [category]: [menuItem] };
+    }, {});
 
   return (
     <MenuItemsList>

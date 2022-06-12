@@ -1,9 +1,10 @@
 import ButtonDocs from 'features/ButtonDocs';
-import Docs from 'features/DocsPage';
 import DrawerDocs from 'features/DrawerDocs';
-import Home from 'features/HomePage';
 import InputDocs from 'features/InputDocs';
 import GettingStarted from 'features/Installation';
+import Docs from 'features/PageDocs';
+import Home from 'features/PageHome';
+import PageNotFound from 'features/PageNotFound';
 import TableDocs from 'features/TableDocs';
 import React from 'react';
 import IconDocs from '../features/IconDocs';
@@ -51,10 +52,15 @@ export const docsRoutes = [
     path: 'table',
     element: <TableDocs />,
     category: 'Components'
+  },
+  {
+    path: '*',
+    element: <PageNotFound />
   }
 ];
 
 export const publicRoutes = [
   { path: '/docs/*', element: <Docs />, children: docsRoutes },
-  { path: '/', element: <Home /> }
+  { path: '/', element: <Home /> },
+  { path: '*', element: <PageNotFound /> }
 ];
