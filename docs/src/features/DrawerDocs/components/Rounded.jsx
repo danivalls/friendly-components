@@ -10,8 +10,14 @@ const Rounded = () => {
   return (
     <>
       <Button onClick={openDrawer}>Open Drawer</Button>
-      <Drawer onClose={closeDrawer} visible={drawerVisibility} rounded>
-        Nice content!
+      <Drawer
+        onClose={closeDrawer}
+        visible={drawerVisibility}
+        rounded
+        placement="bottom"
+        size="25vh"
+      >
+        Perfect for mobile devices!
       </Drawer>
     </>
   );
@@ -32,8 +38,14 @@ const Rounded = () => {
   return (
     <>
       <Button onClick={openDrawer}>Open Drawer</Button>
-      <Drawer onClose={closeDrawer} visible={drawerVisibility} rounded>
-        Nice content!
+      <Drawer
+        onClose={closeDrawer}
+        visible={drawerVisibility}
+        rounded
+        placement="bottom"
+        size="25vh"
+      >
+        Perfect for mobile devices!
       </Drawer>
     </>
   );
