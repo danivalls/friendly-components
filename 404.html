@@ -11,30 +11,25 @@
 
       const usedPort = port ? `:${port}` : '';
       const baseUrl = `${protocol}//${hostname}${usedPort}`;
+      const basename = pathname
+        .split('/')
+        .slice(0, 1 + PATH_SEGMENTS_TO_KEEP)
+        .join('/');
 
-      console.log(
-        pathname
-          .split('/')
-          .slice(0, 1 + PATH_SEGMENTS_TO_KEEP)
-          .join('/')
-      );
+      const path = pathname
+        .slice(1)
+        .split('/')
+        .slice(PATH_SEGMENTS_TO_KEEP)
+        .join('/')
+        .replace(/&/g, '~and~');
 
-      window.location.replace(
-        baseUrl +
-          pathname
-            .split('/')
-            .slice(0, 1 + PATH_SEGMENTS_TO_KEEP)
-            .join('/') +
-          '/?/' +
-          pathname
-            .slice(1)
-            .split('/')
-            .slice(PATH_SEGMENTS_TO_KEEP)
-            .join('/')
-            .replace(/&/g, '~and~') +
-          (search ? '&' + search.slice(1).replace(/&/g, '~and~') : '') +
-          hash
-      );
+      const searchParams = search
+        ? '&' + search.slice(1).replace(/&/g, '~and~')
+        : '';
+
+      const url = `${baseUrl}${basename}/?/${path}${searchParams}${hash}`;
+
+      window.location.replace(url);
     </script>
   </head>
   <body></body>
