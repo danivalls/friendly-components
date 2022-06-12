@@ -57,7 +57,8 @@ export const IconContainer = styled.div`
   margin-right: 1rem;
 
   svg {
-    animation: ${rotateNonsense} 5s cubic-bezier(0.47, 1.64, 0.41, 0.8) infinite;
+    animation: ${rotateNonsense} 5s
+      ${({ theme }) => theme.animationTimings.bounce} infinite;
   }
 `;
 

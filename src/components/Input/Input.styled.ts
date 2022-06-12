@@ -32,7 +32,7 @@ export const InputBody = styled.input`
 
   opacity: 0.8;
 
-  transition: all 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: all 0.3s ${({ theme }): string => theme.animationTimings.bounce};
 
   &::placeholder {
     opacity: 0.5;
@@ -75,7 +75,7 @@ export const IconContainer = styled.div.attrs(() => ({
     ${({ elevated }): string => (elevated ? '-25%, -25%' : '0, 0')}
   );
 
-  transition: all 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: all 0.3s ${({ theme }): string => theme.animationTimings.bounce};
 `;
 
 export const InputLabel = styled.div<InputLabelProps>`
@@ -83,5 +83,5 @@ export const InputLabel = styled.div<InputLabelProps>`
   padding-left: ${({ theme, hasIcon, focused }): string =>
     hasIcon && focused ? theme.spacing.medium : theme.spacing.small};
 
-  transition: all 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: all 0.3s ${({ theme }): string => theme.animationTimings.bounce};
 `;

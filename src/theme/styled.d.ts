@@ -1,4 +1,5 @@
 import 'styled-components';
+import animationTimings from './animationTimings';
 import borderRadius from './borderRadius';
 import fontSize from './fontSize';
 import fontWeight from './fontWeight';
@@ -14,5 +15,6 @@ declare module 'styled-components' {
     lineHeight: typeof lineHeight;
     spacing: typeof spacing;
     borderRadius: typeof borderRadius;
+    animationTimings: typeof animationTimings;
   }
 }

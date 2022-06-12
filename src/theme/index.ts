@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'styled-components';
+import animationTimings from './animationTimings';
 import borderRadius from './borderRadius';
 import generateColors from './colors';
 import fontSize from './fontSize';
@@ -16,7 +17,8 @@ const generateTheme = (baseColors: BaseColors): DefaultTheme => {
     fontWeight,
     lineHeight,
     spacing,
-    borderRadius
+    borderRadius,
+    animationTimings
   };
 };
 
