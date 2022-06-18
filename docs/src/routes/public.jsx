@@ -5,6 +5,7 @@ import GettingStarted from 'features/Installation';
 import Docs from 'features/PageDocs';
 import Home from 'features/PageHome';
 import PageNotFound from 'features/PageNotFound';
+import RadioDocs from 'features/RadioDocs';
 import TableDocs from 'features/TableDocs';
 import React from 'react';
 import IconDocs from '../features/IconDocs';
@@ -51,6 +52,12 @@ export const docsRoutes = [
     label: 'Table',
     path: 'table',
     element: <TableDocs />,
+    category: 'Components'
+  },
+  {
+    label: 'Radio',
+    path: 'radio',
+    element: <RadioDocs />,
     category: 'Components'
   },
   {
