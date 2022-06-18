@@ -8,7 +8,7 @@ import { RadioOptionData } from './Radio.types';
 const generateOptions = (amount: number): RadioOptionData[] =>
   new Array(amount).fill(null).map(
     (option, index): RadioOptionData => ({
-      label: lorem.word(),
+      label: `${lorem.word()}-${index}`,
       value: index
     })
   );
