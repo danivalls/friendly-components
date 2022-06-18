@@ -3,6 +3,7 @@ import Drawer from './components/Drawer';
 import Icon from './components/Icon';
 import iconNames from './components/Icon/iconNames';
 import Input from './components/Input';
+import Radio from './components/Radio';
 import Table from './components/Table';
 import ThemeProvider from './components/ThemeProvider';
 import Toggle from './components/Toggle';
@@ -15,6 +16,7 @@ export {
   Icon,
   iconNames,
   Input,
+  Radio,
   Table,
   Toggle,
   ThemeProvider

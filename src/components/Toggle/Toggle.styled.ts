@@ -87,7 +87,8 @@ export const ToggleIndicator = styled.div.attrs(() => ({
   margin-left: ${({ checked }): string =>
     checked ? 'calc(100% - 1.25rem - 0.25rem)' : '0.25rem'};
 
-  transition: all 0.3s ${({ theme }): string => theme.animationTimings.bounce};
+  transition: all 0.3s
+    ${({ theme }): string => theme.animationTimings.softBounce};
 `;
 
 export const ToggleControl = styled.input.attrs(() => ({
