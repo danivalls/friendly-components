@@ -1,6 +1,7 @@
 import DocExampleRenderer from 'components/DocExampleRenderer';
 import DocSectionTitle from 'components/DocSectionTitle';
 import DocTemplate from 'components/DocTemplate';
+import PropsTable from 'components/PropsTable';
 import React from 'react';
 import BasicUsage, { basicUsageCode } from './components/BasicUsage';
 import ColoringUsingCustomColor, {
@@ -9,6 +10,7 @@ import ColoringUsingCustomColor, {
 import ColoringUsingTheme, {
   coloringUsingThemeCode
 } from './components/ColoringUsingTheme';
+import props, { radioOptionData } from './radioProps';
 
 const RadioDocs = () => {
   return (
@@ -30,6 +32,10 @@ const RadioDocs = () => {
         code={coloringUsingCustomColorCode}
         content={<ColoringUsingCustomColor />}
       />
+
+      <DocSectionTitle>API</DocSectionTitle>
+      <PropsTable title="Props" props={props} />
+      <PropsTable title="RadioOptionData" props={radioOptionData} />
     </DocTemplate>
   );
 };
