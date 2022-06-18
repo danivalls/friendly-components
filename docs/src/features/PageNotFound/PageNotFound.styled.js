@@ -1,41 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
 const rotateNonsense = keyframes`
-  0% {
-    transform: rotate(0deg);
-  }
-
-  15% {
-    transform: rotate(75deg);
-  }
-
-  20% {
-    transform: rotate(90deg);
-  }
-
-  30% {
-    transform: rotate(-80deg);
-  }
-
-  40% {
-    transform: rotate(-25deg);
-  }
-
-  50% {
-    transform: rotate(-30deg);
-  }
-
-  60% {
-    transform: rotate(30deg);
-  }
-
-  75% {
-    transform: rotate(-180deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(75deg); }
+  20% { transform: rotate(90deg); }
+  30% { transform: rotate(-80deg); }
+  40% { transform: rotate(-25deg); }
+  50% { transform: rotate(-30deg); }
+  60% { transform: rotate(30deg); }
+  75% { transform: rotate(-180deg); }
+  100% { transform: rotate(0deg); }
 `;
 
 export const Container = styled.main`
