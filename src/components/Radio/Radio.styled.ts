@@ -14,7 +14,6 @@ export const RadioOptionContainer = styled.label`
   grid-template-columns: min-content 1fr;
   grid-gap: 0.5rem;
   align-items: center;
-  cursor: pointer;
 `;
 
 const getIndicatorColor = (
@@ -63,4 +62,10 @@ export const RadioInput = styled.input.attrs(() => ({
   type: 'radio'
 }))`
   display: none;
+`;
+
+export const RadioLabel = styled.label`
+  white-space: nowrap;
+  width: min-content;
+  cursor: pointer;
 `;

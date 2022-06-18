@@ -2,6 +2,7 @@ import React from 'react';
 import {
   RadioIndicator,
   RadioInput,
+  RadioLabel,
   RadioOptionContainer
 } from './Radio.styled';
 import { RadioOptionProps } from './Radio.types';
@@ -23,7 +24,7 @@ const RadioOption: React.FC<RadioOptionProps> = ({
         onChange={(): void => onChange(value)}
       />
       <RadioIndicator checked={checked} color={color} />
-      <label htmlFor={String(value)}>{label}</label>
+      <RadioLabel htmlFor={String(value)}>{label}</RadioLabel>
     </RadioOptionContainer>
   );
 };
