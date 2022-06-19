@@ -32,7 +32,7 @@ export const IconContainer = styled.div`
 
   svg {
     animation: ${rotateNonsense} 5s
-      ${({ theme }) => theme.animationTimings.bounce} infinite;
+      ${({ theme }) => theme.animationTimings.softBounceBig} infinite;
   }
 `;
 
