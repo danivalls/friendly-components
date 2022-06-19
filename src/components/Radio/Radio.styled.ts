@@ -68,4 +68,6 @@ export const RadioLabel = styled.label`
   white-space: nowrap;
   width: min-content;
   cursor: pointer;
+
+  font-family: ${({ theme }): string => theme.fontFamily};
 `;

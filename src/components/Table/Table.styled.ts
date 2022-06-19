@@ -38,6 +38,7 @@ export const TableHeaderCell = styled.th<CellProps>`
   background-color: ${({ theme }): string => theme.colors.neutral};
   text-align: ${({ align }): string => align};
   font-weight: Bold;
+  font-family: ${({ theme }): string => theme.fontFamily};
   width: ${getColumnWidth};
 
   padding: 0.625rem 0.75rem;
@@ -81,6 +82,8 @@ export const TableBodyRow = styled(TableRow)<TableRowProps>`
 
 export const TableBodyCell = styled.td<CellProps>`
   text-align: ${({ align }): string => align};
+  font-family: ${({ theme }): string => theme.fontFamily};
+
   padding: 0.625rem 0.75rem;
 
   border-bottom: 1px solid ${({ theme }): string => theme.colors.neutral};

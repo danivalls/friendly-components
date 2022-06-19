@@ -8,12 +8,16 @@ import lineHeight from './lineHeight';
 import spacing from './spacing';
 import { BaseColors } from './theme.types';
 
-const generateTheme = (baseColors: BaseColors): DefaultTheme => {
+const generateTheme = (
+  baseColors: BaseColors,
+  fontFamily: string
+): DefaultTheme => {
   const colors = generateColors(baseColors);
 
   return {
     colors,
     fontSize,
+    fontFamily,
     fontWeight,
     lineHeight,
     spacing,

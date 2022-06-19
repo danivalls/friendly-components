@@ -18,6 +18,8 @@ export const InputContainer = styled.label<InputContainerProps>`
 
   background-color: ${({ theme }): string => theme.colors.neutralLight};
   border-radius: ${({ theme }): string => theme.borderRadius.base};
+
+  font-family: ${({ theme }): string => theme.fontFamily};
 `;
 
 export const InputBody = styled.input`
@@ -34,6 +36,8 @@ export const InputBody = styled.input`
 
   transition: all 0.3s
     ${({ theme }): string => theme.animationTimings.softBounce};
+
+  font-family: ${({ theme }): string => theme.fontFamily};
 
   &::placeholder {
     opacity: 0.5;

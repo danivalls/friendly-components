@@ -14,18 +14,12 @@ const ThemeProvider: React.FC<ProviderProps> = ({
   successColor: success,
   neutralColor: neutral,
   textColor: text,
+  fontFamily = 'Poppins',
   customTheme = {},
   children
 }) => {
-  const baseTheme = generateTheme({
-    primary,
-    secondary,
-    error,
-    warning,
-    success,
-    neutral,
-    text
-  });
+  const colors = { primary, secondary, error, warning, success, neutral, text };
+  const baseTheme = generateTheme(colors, fontFamily);
 
   const theme: DefaultTheme = merge(baseTheme, customTheme);
 

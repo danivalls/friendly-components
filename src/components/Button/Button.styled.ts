@@ -39,16 +39,22 @@ const getOutlineShadow = (props: {
 };
 
 export const BaseButton = styled.button<BaseButtonProps>`
-  border: none;
   position: relative;
-  overflow: hidden;
-  outline: none;
+
   padding: 0.5rem 0.75rem;
+
+  outline: none;
+  overflow: hidden;
+  border: none;
   border-radius: ${({ theme }): string => theme.borderRadius.base};
+
   cursor: pointer;
+
   background-color: ${getBackgroundColor};
-  color: ${getTextColor};
   box-shadow: ${getOutlineShadow};
+
+  color: ${getTextColor};
+  font-family: ${({ theme }): string => theme.fontFamily};
 `;
 
 const rippleAnimation = keyframes`

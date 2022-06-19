@@ -11,6 +11,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: ColorsType;
     fontSize: typeof fontSize;
+    fontFamily: string;
     fontWeight: typeof fontWeight;
     lineHeight: typeof lineHeight;
     spacing: typeof spacing;

@@ -7,5 +7,6 @@ export interface ProviderProps {
   neutralColor?: string;
   textColor?: string;
   customTheme?: any;
+  fontFamily?: string;
   children: React.ReactNode;
 }
