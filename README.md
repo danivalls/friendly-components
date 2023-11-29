@@ -5,7 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 ![./coverage/badge-branches.svg](https://img.shields.io/badge/coverage-100%25-green?logo=jest)
 [![Github Actions](https://github.com/danivalls/friendly-components/actions/workflows/gh-pipeline.yml/badge.svg)](https://github.com/danivalls/friendly-components/actions/workflows/gh-pipeline.yml)
-[![Build & Test](https://github.com/danivalls/friendly-components/actions/workflows/gh-pipeline.yml/badge.svg)](https://github.com/danivalls/friendly-components/actions/workflows/gh-pipeline.yml)
+
 
 ## Install
 
